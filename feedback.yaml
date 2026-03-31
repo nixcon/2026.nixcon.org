@@ -1,0 +1,37 @@
+loops:
+  default:
+    hooks:
+      before-all: |
+        workdir=.feedback
+        rm -fr $workdir
+        nix build .#wasmPkgs.haskellPackages.nixcon-website.staticAssets
+        cp -r "$(realpath ./result)" "$workdir"
+        chmod -R +w "$workdir"
+
+        ln -s "$(wasm32-wasi-cabal list-bin website)" "$workdir/static/app.wasm"
+
+        pushd "$workdir"/static
+        for f in ../../static/*; do
+          rm -fr "$(basename $f)"
+          ln -s "$f" .
+        done
+
+        "$(wasm32-wasi-ghc --print-libdir)"/post-link.mjs --input app.wasm --output ghc_wasm_jsffi.js
+        # hold @MagicRB accountable for this crime
+        sed -i 's/var runBatch = /var initialSyncDepth = 0; &/' ghc_wasm_jsffi.js
+        popd
+    script: |
+      set -ex
+      workdir=.feedback
+      wasm32-wasi-cabal build website
+      until [ -e $workdir/static/app.wasm ]; do
+        sleep 1
+      done
+      pushd $workdir
+      rm index.html static/main.js
+      cp ../static/index.html index.html
+      cp ../static/main.js static/main.js
+      hash="$(md5sum static/app.wasm | cut -d' ' -f1)"
+      sed -i "s/\?v=0/\?v=$hash/" index.html static/main.js
+      popd
+      http-server $workdir --brotli --gzip

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<head>
+    <script>
+      const redirect = sessionStorage.redirect;
+      if (redirect) {
+        delete sessionStorage.redirect;
+        window.history.replaceState(null, null, redirect);
+      }
+    </script>
+    <meta charset="utf-8">
+    <meta name="color-scheme" content="light dark">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>NixCon 2026</title>
+    <link rel="stylesheet" href="/static/style.css?v=0">
+    <script src="/static/main.js?v=0" type="module"></script>
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    <link rel="icon" href="/static/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png"><!-- 180×180 -->
+  </head>
+  <body>
+  </body>
+</html>

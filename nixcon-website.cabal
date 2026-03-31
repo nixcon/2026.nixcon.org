@@ -1,0 +1,74 @@
+cabal-version: 3.0
+name: nixcon-website
+version: 0.1.0.0
+homepage: https://2026.nixcon.org
+license: Apache-2.0
+license-file: LICENCE.md
+author: ners
+maintainer: ners@gmx.ch
+category: Web
+build-type: Simple
+
+source-repository head
+  type: git
+  location: https://github.com/nixcon/2026.nixcon.org
+
+common miso
+  if (impl(ghcjs) || arch(javascript))
+    cpp-options: -DGHCJS_BROWSER
+  elif arch(wasm32)
+    cpp-options: -DWASM
+  else
+    cpp-options: -DVANILLA
+
+  if (impl(ghcjs) || arch(javascript))
+    ld-options: -sEXPORTED_RUNTIME_METHODS=HEAP8
+  elif arch(wasm32)
+    ghc-options:
+      -no-hs-main
+      -optl-mexec-model=reactor
+      "-optl-Wl,--export=hs_start"
+
+common common
+  default-language: GHC2021
+  ghc-options:
+    -Weverything
+    -Wno-unsafe
+    -Wno-missing-safe-haskell-mode
+    -Wno-missing-export-lists
+    -Wno-missing-import-lists
+    -Wno-missing-kind-signatures
+    -Wno-all-missed-specialisations
+
+  default-extensions:
+    ApplicativeDo
+    BlockArguments
+    DataKinds
+    DefaultSignatures
+    DeriveAnyClass
+    DeriveGeneric
+    DerivingStrategies
+    DerivingVia
+    ExplicitNamespaces
+    LambdaCase
+    NoImplicitPrelude
+    OverloadedLabels
+    OverloadedRecordDot
+    OverloadedStrings
+    QuasiQuotes
+    RecordWildCards
+    RecursiveDo
+    StrictData
+    TypeFamilies
+    ViewPatterns
+
+executable website
+  import: common, miso
+  ghc-options: -O2
+  hs-source-dirs: app
+  main-is: Main.hs
+  build-depends:
+    base,
+    extra,
+    generic-lens,
+    miso,

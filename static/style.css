@@ -1,0 +1,341 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+@font-face {
+    font-display: block;
+    font-family: "SerenityOS Emoji";
+    font-style: normal;
+    src: url("https://linusg.github.io/serenityos-emoji-font/SerenityOS-Emoji.ttf");
+    unicode-range: U+00A9, U+00AE, U+200D, U+203C, U+2049, U+20E3, U+2122, U+2139, U+2194-2199, U+21A9-21AA, U+231A-231B, U+2328, U+2388, U+23CF, U+23E9-23F3, U+23F8-23FA, U+24C2, U+25AA-25AB, U+25B6, U+25C0, U+25FB-25FE, U+2600-27EF, U+2934-2935, U+2B00-2BFF, U+3030, U+303D, U+3297, U+3299, U+1F000-1F64F, U+1F680-1F6FF, U+1F774-1F77F, U+1F7D5-1F7FF, U+1F80C-1F80F, U+1F848-1F84F, U+1F85A-1F85F, U+1F888-1F88F, U+1F8AE-1F8FF, U+1F90C-1FAFF U+FE0E-FE0F;
+}
+
+:root {
+  --pixel-corners: polygon(
+    0px calc(100% - 32px),
+    8px calc(100% - 32px),
+    8px calc(100% - 16px),
+    16px calc(100% - 16px),
+    16px calc(100% - 8px),
+    32px calc(100% - 8px),
+    32px 100%,
+    calc(100% - 32px) 100%,
+    calc(100% - 32px) calc(100% - 8px),
+    calc(100% - 16px) calc(100% - 8px),
+    calc(100% - 16px) calc(100% - 16px),
+    calc(100% - 8px) calc(100% - 16px),
+    calc(100% - 8px) calc(100% - 32px),
+    100% calc(100% - 32px),
+    100% 32px,
+    calc(100% - 8px) 32px,
+    calc(100% - 8px) 16px,
+    calc(100% - 16px) 16px,
+    calc(100% - 16px) 8px,
+    calc(100% - 32px) 8px,
+    calc(100% - 32px) 0px,
+    32px 0px,
+    32px 8px,
+    16px 8px,
+    16px 16px,
+    8px 16px,
+    8px 32px,
+    0px 32px
+  );
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  color: inherit;
+  text-decoration: inherit;
+  box-sizing: border-box;
+  line-height: inherit;
+  border: none;
+  background: 0 0;
+  appearance: none;
+  list-style-type: none;
+  image-rendering: pixelated;
+  cursor: url("cursor/pointer.png"), pointer;
+}
+
+:active {
+  cursor: url("cursor/click.png"), pointer;
+}
+
+::selection, ::-moz-selection {
+  background: #2F2F2F;
+  color: #FFF;
+}
+
+html, body {
+  width: 100vw;
+  max-width: 100vw;
+}
+
+body {
+  font-family: "Press Start 2P", "SerenityOS Emoji", system-ui;
+  font-size: 24px;
+  @media (width < 500px) {
+    font-size: 16px;
+  }
+  font-weight: 400;
+  font-style: normal;
+  color: #2F2F2F;
+  background-color: #B5E2F7;
+  line-height: 1.4;
+}
+
+header {
+  background-color: #2F2F2F;
+  color: #FFF;
+  padding: 1em 2em 1em 1em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  z-index: 10;
+  border-bottom: 4px solid #606fce;
+  @media (width < 100em) {
+    display: none;
+  }
+}
+
+header .logo {
+  height: 3em;
+}
+
+header nav a {
+  padding: 1em 2em;
+}
+
+header nav a:hover {
+  color: #F00;
+}
+
+header nav ul {
+  display: flex;
+  flex-direction: row;
+}
+
+main {
+  max-width: 65em;
+  margin: auto;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 4em;
+}
+
+main > section {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  scroll-padding-top: 10em;
+}
+
+#hero {
+  align-items: center;
+}
+
+#hero .logo {
+  height: 15em;
+  margin: 3em 0 1em 0;
+}
+
+h1 {
+  font-size: 300%;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+h1 + .tagline {
+}
+
+h2 {
+  background-color: #065D9E;
+  color: #FFF;
+  font-size: 150%;
+  padding: 1em 2em;
+  clip-path: var(--pixel-corners);
+  align-self: anchor-center;
+}
+
+#about {
+  @media (width < 100em) {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+  }
+  @media (width >= 100em) {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 5em;
+  }
+}
+
+#overview {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  align-self: center;
+}
+
+#overview li {
+  white-space: pre-line;
+  padding-left: 3em;
+  position: relative;
+}
+
+#overview li:before {
+  content: "";
+  display: inline-block;
+  font-size: 150%;
+  height: 2em;
+  width: 2em;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+#overview li:nth-of-type(1):before {
+  content: "📅";
+}
+
+#overview li:nth-of-type(2):before {
+  content: "📍";
+}
+
+#overview li:nth-of-type(3):before {
+  content: "🧑‍💻";
+  top: -0.5em;
+}
+
+#overview li:nth-of-type(4) {
+  font-size: 80%;
+  margin-top: -2em;
+}
+
+#overview li:nth-of-type(5):before {
+  content: "🚩";
+  top: -0.5em;
+}
+
+.scrolls {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 20em);
+  gap: 1em;
+}
+
+.scroll {
+  width: 20em;
+  aspect-ratio: 29 / 37;
+  background-image: url("scroll.png");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 3em 3em 4em 3.5em;
+}
+
+.scroll .details {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 1em;
+}
+
+.scroll .details li {
+  font-size: 80%;
+  position: relative;
+  padding-left: 2em;
+}
+
+.scroll .details li:before {
+  content: "🪙";
+  position: absolute;
+  left: 0;
+}
+
+.scroll .price {
+  align-self: flex-end;
+}
+
+#organisers ul {
+  text-align: center;
+}
+
+#organisers li {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.5em;
+  align-items: center;
+  margin: 2em;
+}
+
+.portrait {
+  position: relative;
+}
+
+.portrait img {
+  width: 10em;
+  height: 10em;
+}
+
+.portrait:after {
+  content: "";
+  width: 11em;
+  aspect-ratio: 74 / 78;
+  position: absolute;
+  top: -1em;
+  left: -0.5em;
+  background-image: url("frame.png");
+  background-size: cover;
+}
+
+footer:before {
+  display: block;
+  content: "";
+  width: 100vw;
+  height: 20em;
+  background-image: url(footer.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 20%;
+}
+
+footer .content {
+  background-color: #392310;
+  color: #FFF;
+  @media (width >= 100em) {
+    padding: 2em 4em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (width < 100em) {
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+}
+
+footer ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+footer a:hover {
+  color: #F00;
+}
+
+#years {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 4em);
+  row-gap: 0;
+}
