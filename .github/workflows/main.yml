@@ -1,0 +1,36 @@
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Publish page
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: ners/simply-nix@main
+      - uses: ryanccn/attic-action@v0
+        with:
+          endpoint: https://cache.ners.ch
+          cache: haskell
+          token: ${{ secrets.ATTIC_TOKEN }}
+      - name: Nix build
+        run: nix build --accept-flake-config .
+      - uses: actions/upload-pages-artifact@v4
+        id: upload
+        with:
+          path: result/
+  publish:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.upload.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
