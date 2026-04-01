@@ -72,3 +72,9 @@ executable website
     extra,
     generic-lens,
     miso,
+
+  other-modules:
+    Page.CodeOfConduct
+    Page.LegalDisclosure
+    Page.MainPage
+    Page.PrivacyPolicy

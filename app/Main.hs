@@ -2,31 +2,85 @@
 
 module Main where
 
+import Control.Monad.Extra (unlessM)
+import Data.Either.Extra (eitherToMaybe)
+import Data.Generics.Labels ()
+import Data.List qualified as List
+import Data.List.Extra qualified as List
+import Data.Maybe (maybeToList)
+import GHC.Generics (Generic)
+import Miso.FFI.QQ (js)
 import Miso.Html.Element
+import Miso.Html.Event (onClickPrevent)
 import Miso.Html.Property
+import Miso.Lens (fromVL, (&), (.=), (.~))
 import Miso.Prelude hiding (update, view)
+import Miso.Router hiding (href_)
+import Miso.Router qualified as Router
+import Miso.Util.Parser (ParserT (..))
+import Page.MainPage qualified
 
 #if defined(WASM) && !defined(INTERACTIVE)
 foreign export javascript "hs_start" main :: IO ()
 #endif
 
 main :: IO ()
-main = startApp defaultEvents $ component emptyModel update view
+main = do
+    uri <- getURI
+    consoleLog . ms . show $ route @PageId uri
+    let model = emptyModel & either (const id) (fromVL #currentPage .~) (route uri)
+    startApp defaultEvents
+        $ (component model update view)
+            { subs = [routerSub $ either (const NoOp) GoToPage]
+            }
 
 data Action
     = NoOp
+    | GoToPage PageId
 
-data Model = Model
-    deriving stock (Eq)
+newtype Model = Model {currentPage :: PageId}
+    deriving stock (Eq, Generic)
+
+data PageId
+    = MainPage
+    | LegalDisclosure
+    | PrivacyPolicy
+    | CodeOfConduct
+    deriving stock (Generic, Show, Eq, Bounded, Enum)
+
+instance Router PageId where
+    fromRoute MainPage = [IndexToken]
+    fromRoute LegalDisclosure = [CaptureOrPathToken "legal"]
+    fromRoute PrivacyPolicy = [CaptureOrPathToken "privacy"]
+    fromRoute CodeOfConduct = [CaptureOrPathToken "conduct"]
+    routeParser = Parser \_ tokens ->
+        maybeToList
+            $ List.firstJust
+                (\r -> (r,) <$> List.stripPrefix (fromRoute @PageId r) tokens)
+                [minBound .. maxBound]
 
 emptyModel :: Model
-emptyModel = Model
+emptyModel = Model{currentPage = MainPage}
+
+getCurrentPageId :: IO (Maybe PageId)
+getCurrentPageId = eitherToMaybe . route <$> getURI
+
+scrollToTop :: IO ()
+scrollToTop = [js| document.body.scrollTop = document.documentElement.scrollTop = 0; |]
 
 update :: Action -> Effect ROOT Model Action
 update NoOp = pure ()
+update (GoToPage pageId) = do
+    io_
+        . unlessM ((Just pageId ==) <$> getCurrentPageId)
+        . pushURI
+        . toURI
+        $ pageId
+    io_ scrollToTop
+    fromVL #currentPage .= pageId
 
 view :: Model -> View Model Action
-view Model =
+view Model{..} =
     div_
         [id_ "page"]
         [ header_
@@ -43,169 +97,18 @@ view Model =
                     ]
                 ]
             ]
-        , main_
-            []
-            [ section_
-                [id_ "hero"]
-                [ img_ [class_ "logo", src_ "/static/icon.svg"]
-                , h1_ [] [text "JOIN NIXCON 2026"]
-                , div_
-                    [id_ "about"]
-                    [ div_ []
-                        $ p_ []
-                        . pure
-                        . text
-                        <$> [ "NixCon is the annual gathering of the Nix community."
-                            , "Developers, operators, researchers, and enthusiasts come together to share ideas, present new work, and explore the future of reproducible systems."
-                            , "Join us for talks, workshops, and discussions about everything from Nix fundamentals to large-scale production deployments."
-                            ]
-                    , ul_
-                        [id_ "overview"]
-                        [ li_ [] [text "25-28 September 2026\nFriday to Monday"]
-                        , li_
-                            []
-                            [ text "Auditorium Maximum\nul. Krupnicza 33\n31-123 Kraków\nPolska"
-                            ]
-                        , li_ [] [text "600-700 attendees"]
-                        , li_ [] [text "... and their spouses🥰"]
-                        , li_ [] [text "First NixCon CTF ever!"]
-                        ]
-                    ]
-                ]
-            , section_
-                [id_ "tickets"]
-                [ h2_ [] [text "Tickets"]
-                , scrolls
-                    []
-                    [ Scroll
-                        { title = "Standard"
-                        , details = ["Full conference access"]
-                        , price = "128 €"
-                        }
-                    , Scroll
-                        { title = "Supporter"
-                        , details =
-                            [ "Full conference access"
-                            , "Help others attend NixCon"
-                            , "A star on your badge"
-                            ]
-                        , price = "256 €"
-                        }
-                    , Scroll
-                        { title = "Professional"
-                        , details =
-                            [ "Full conference access"
-                            , "Help others attend NixCon"
-                            , "Company logo on your badge"
-                            ]
-                        , price = "512 €"
-                        }
-                    ]
-                , p_ [] [text "TODO link(s) to ticket shop"]
-                , p_ [] [text "TODO mention contributor vouchers"]
-                ]
-            , section_
-                [id_ "sponsors"]
-                [ h2_ [] [text "Sponsors"]
-                , p_ [] [text "TODO where do we show actual sponsors (logos)?"]
-                , scrolls
-                    []
-                    [ Scroll
-                        { title = "Bronze"
-                        , details =
-                            [ "Logo on website"
-                            , "1 Professional ticket"
-                            ]
-                        , price = "1024 €"
-                        }
-                    , Scroll
-                        { title = "Silver"
-                        , details =
-                            [ "Everything in Bronze"
-                            , "Shout-out in the opening"
-                            , "2 Professional tickets"
-                            ]
-                        , price = "4096 €"
-                        }
-                    , Scroll
-                        { title = "Gold"
-                        , details =
-                            [ "Everything in Silver"
-                            , "5 minute lightning talk slot"
-                            , "Dedicated booth space"
-                            , "4 Professional tickets"
-                            ]
-                        , price = "8192 €"
-                        }
-                    , Scroll
-                        { title = "Diamond"
-                        , details =
-                            [ "Everything in Gold"
-                            , "Logo in promo materials"
-                            , "Add item to tote bags"
-                            , "8 Professional tickets"
-                            ]
-                        , price = "16483 €"
-                        }
-                    ]
-                , p_ [] [text "TODO describe how to become a sponsor"]
-                ]
-            , section_
-                [id_ "organisers"]
-                [ h2_ [] [text "Organisers"]
-                , p_
-                    []
-                    [ text
-                        "NixCon is organised by a dedicated team of volunteers from the Nix community."
-                    ]
-                , organisers
-                    []
-                    [ Organiser
-                        { image = "https://avatars.githubusercontent.com/u/50560955"
-                        , name = "ners"
-                        , github = "ners"
-                        , matrix = "@ners:nixos.dev"
-                        }
-                    , Organiser
-                        { image = "https://avatars.githubusercontent.com/u/51028009"
-                        , name = "john"
-                        , github = "john-rodewald"
-                        , matrix = "@john-rodewald:nixos.dev"
-                        }
-                    , Organiser
-                        { image = "https://avatars.githubusercontent.com/u/621759"
-                        , name = "lassulus"
-                        , github = "lassulus"
-                        , matrix = "@lassulus:lassul.us"
-                        }
-                    , Organiser
-                        { image = "https://avatars.githubusercontent.com/u/80830132"
-                        , name = "rabbit"
-                        , github = "ra33it0"
-                        , matrix = "@ra33it0:matrix.org"
-                        }
-                    ]
-                , p_ [] [text "TODO venue is also co-organiser"]
-                , p_
-                    []
-                    [text "TODO thank additional people, e.g. Farhad, Sigmanificient, Carina, ..."]
-                , p_ [] [text "TODO any other content"]
-                ]
-            , section_
-                [id_ "ctf"]
-                [ h2_ [] [text "CTF"]
-                , p_ [] [text "TODO content"]
-                ]
-            ]
+        , case currentPage of
+            MainPage -> Page.MainPage.page
+            _ -> div_ [] [text "TODO"]
         , footer_
             []
             [ div_
                 [class_ "content"]
                 [ ul_
                     []
-                    [ li_ [] [a_ [href_ "#"] [text "Legal disclosure"]]
-                    , li_ [] [a_ [href_ "#"] [text "Privacy policy"]]
-                    , li_ [] [a_ [href_ "#"] [text "Code of conduct"]]
+                    [ li_ [] [pageLink LegalDisclosure [] [text "Legal disclosure"]]
+                    , li_ [] [pageLink PrivacyPolicy [] [text "Privacy policy"]]
+                    , li_ [] [pageLink CodeOfConduct [] [text "Code of conduct"]]
                     ]
                 , ul_
                     []
@@ -242,38 +145,9 @@ view Model =
             ]
         ]
 
-data Scroll = Scroll
-    { title :: MisoString
-    , details :: [MisoString]
-    , price :: MisoString
-    }
-
-scroll :: Scroll -> View Model Action
-scroll Scroll{..} =
-    li_
-        [class_ "scroll"]
-        [ div_ [class_ "title"] [text title]
-        , ul_ [class_ "details"] [li_ [] [text t] | t <- details]
-        , ul_ [class_ "price"] [text price]
-        ]
-
-scrolls :: [Attribute Action] -> [Scroll] -> View Model Action
-scrolls attrs = ul_ (attrs <> [class_ "scrolls"]) . fmap scroll
-
-data Organiser = Organiser
-    { image :: MisoString
-    , name :: MisoString
-    , github :: MisoString
-    , matrix :: MisoString
-    }
-
-organiser :: Organiser -> View Model Action
-organiser Organiser{..} =
-    li_
-        []
-        [ div_ [class_ "portrait"] [img_ [src_ image]]
-        , div_ [] [text name]
-        ]
-
-organisers :: [Attribute Action] -> [Organiser] -> View Model Action
-organisers attrs = ul_ attrs . fmap organiser
+pageLink
+    :: PageId
+    -> [Attribute Action]
+    -> [View Model Action]
+    -> View Model Action
+pageLink pageId = a_ . ([Router.href_ pageId, onClickPrevent (GoToPage pageId)] <>)

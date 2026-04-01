@@ -48,10 +48,16 @@ executable export
   main-is: Main.hs
   build-depends:
     base,
+    containers,
     data-default,
     dramaturge,
     effectful,
     exceptions,
     extra,
+    filepath,
+    generic-lens,
+    lens,
+    modern-uri,
     text,
     typed-process-effectful,
+    unordered-containers,
