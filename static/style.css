@@ -113,9 +113,14 @@ header nav a {
   padding: 1em 2em;
 }
 
-header nav a:hover {
+a:hover {
   color: #F00;
 }
+
+main a {
+  color: #00F;
+}
+
 
 header nav ul {
   display: flex;
@@ -163,6 +168,7 @@ h2 {
   padding: 1em 2em;
   clip-path: var(--pixel-corners);
   align-self: anchor-center;
+  text-align: center;
 }
 
 #about {
@@ -297,6 +303,13 @@ h2 {
   background-size: cover;
 }
 
+footer a:has(.logo) {
+  @media (width >= 100em) {
+    display: none;
+  }
+  margin-bottom: 1em;
+}
+
 footer:before {
   display: block;
   content: "";
@@ -328,10 +341,6 @@ footer ul {
   display: flex;
   flex-direction: column;
   gap: 1em;
-}
-
-footer a:hover {
-  color: #F00;
 }
 
 #years {

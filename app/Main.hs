@@ -18,7 +18,10 @@ import Miso.Prelude hiding (update, view)
 import Miso.Router hiding (href_)
 import Miso.Router qualified as Router
 import Miso.Util.Parser (ParserT (..))
+import Page.CodeOfConduct qualified
+import Page.LegalDisclosure qualified
 import Page.MainPage qualified
+import Page.PrivacyPolicy qualified as Page.PricavyPolicy
 
 #if defined(WASM) && !defined(INTERACTIVE)
 foreign export javascript "hs_start" main :: IO ()
@@ -85,7 +88,7 @@ view Model{..} =
         [id_ "page"]
         [ header_
             []
-            [ img_ [class_ "logo", src_ "/static/logo.svg"]
+            [ a_ [Router.href_ MainPage] [img_ [class_ "logo", src_ "/static/logo.svg"]]
             , nav_
                 []
                 [ ul_
@@ -99,12 +102,15 @@ view Model{..} =
             ]
         , case currentPage of
             MainPage -> Page.MainPage.page
-            _ -> div_ [] [text "TODO"]
+            LegalDisclosure -> Page.LegalDisclosure.page
+            PrivacyPolicy -> Page.PricavyPolicy.page
+            CodeOfConduct -> Page.CodeOfConduct.page
         , footer_
             []
             [ div_
                 [class_ "content"]
-                [ ul_
+                [ a_ [Router.href_ MainPage] [img_ [class_ "logo", src_ "/static/logo.svg"]]
+                , ul_
                     []
                     [ li_ [] [pageLink LegalDisclosure [] [text "Legal disclosure"]]
                     , li_ [] [pageLink PrivacyPolicy [] [text "Privacy policy"]]
