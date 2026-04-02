@@ -116,37 +116,41 @@ page =
         , section_
             [id_ "organisers"]
             [ h2_ [] [text "Organisers"]
-            , p_
-                []
-                [ text
-                    "NixCon is organised by a dedicated team of volunteers from the Nix community."
+            , section_
+                [id_ "main-organisers"]
+                [ p_
+                    []
+                    [ text
+                        "NixCon is not organised by a dedicated team of volunteers from the Nix community."
+                    ]
+                , organisers
+                    []
+                    [ Organiser
+                        { image = "https://avatars.githubusercontent.com/u/50560955"
+                        , name = "ners"
+                        , github = "ners"
+                        , matrix = "@ners:nixos.dev"
+                        }
+                    , Organiser
+                        { image = "https://avatars.githubusercontent.com/u/51028009"
+                        , name = "john"
+                        , github = "john-rodewald"
+                        , matrix = "@john-rodewald:nixos.dev"
+                        }
+                    , Organiser
+                        { image = "https://avatars.githubusercontent.com/u/621759"
+                        , name = "lassulus"
+                        , github = "lassulus"
+                        , matrix = "@lassulus:lassul.us"
+                        }
+                    , Organiser
+                        { image = "https://avatars.githubusercontent.com/u/80830132"
+                        , name = "rabbit"
+                        , github = "ra33it0"
+                        , matrix = "@ra33it0:matrix.org"
+                        }
+                    ]
                 ]
-            , organisers
-                []
-                [ Organiser
-                    { image = "https://avatars.githubusercontent.com/u/50560955"
-                    , name = "ners"
-                    , github = "ners"
-                    , matrix = "@ners:nixos.dev"
-                    }
-                , Organiser
-                    { image = "https://avatars.githubusercontent.com/u/51028009"
-                    , name = "john"
-                    , github = "john-rodewald"
-                    , matrix = "@john-rodewald:nixos.dev"
-                    }
-                , Organiser
-                    { image = "https://avatars.githubusercontent.com/u/621759"
-                    , name = "lassulus"
-                    , github = "lassulus"
-                    , matrix = "@lassulus:lassul.us"
-                    }
-                , Organiser
-                    { image = "https://avatars.githubusercontent.com/u/80830132"
-                    , name = "rabbit"
-                    , github = "ra33it0"
-                    , matrix = "@ra33it0:matrix.org"
-                    }
                 ]
             , p_ [] [text "TODO venue is also co-organiser"]
             , p_

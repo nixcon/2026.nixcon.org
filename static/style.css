@@ -271,11 +271,11 @@ h2 {
   align-self: flex-end;
 }
 
-#organisers ul {
+#main-organisers ul {
   text-align: center;
 }
 
-#organisers li {
+#main-organisers li {
   display: inline-flex;
   flex-direction: column;
   gap: 0.5em;
