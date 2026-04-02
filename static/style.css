@@ -286,11 +286,27 @@ h2 {
 }
 
 #organisers {
-  gap: 3em;
+  gap: 2em;
+}
+
+#main-organisers {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
 }
 
 #main-organisers ul {
-  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  @media (width < 56rem) {
+    grid-template-columns: 30% 30%;
+    justify-content: center;
+  }
+
+  @media (width < 40rem) {
+    grid-template-columns: 1fr;
+  }
 }
 
 #main-organisers li {
@@ -299,7 +315,6 @@ h2 {
   gap: 0.5em;
   align-items: center;
   margin: 2em;
-  white-space: nowrap;
 }
 
 .portrait {
@@ -329,6 +344,16 @@ h2 {
   gap: 1em;
 }
 
+#venue img {
+    max-width: 80vw;
+}
+
+#volunteers {
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+}
+
 #volunteers ul {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -336,12 +361,19 @@ h2 {
 
   @media (width < 56rem) {
     grid-template-columns: 1fr 1fr;
+    justify-items: center;
+  }
+
+  @media (width < 40rem) {
+    grid-template-columns: 1fr;
+    justify-items: start;
   }
 }
 
 #volunteers li {
   margin: 1em;
   color: #808;
+  white-space: nowrap;
 }
 
 footer a:has(.logo) {
