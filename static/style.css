@@ -157,10 +157,19 @@ main > section {
   margin: 3em 0 1em 0;
 }
 
+@keyframes blink {
+  36% {
+    opacity: 0.075;
+  }
+}
+
 h1 {
   font-size: 300%;
   margin-bottom: 1em;
   text-align: center;
+  animation: blink 1s step-start 0s infinite;
+
+
 }
 
 h1 + .tagline {
