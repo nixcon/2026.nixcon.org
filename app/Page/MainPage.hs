@@ -152,7 +152,14 @@ page =
                     ]
                 ]
                 ]
-            , p_ [] [text "TODO venue is also co-organiser"]
+            , section_
+                [id_ "venue"]
+                [ p_
+                    []
+                    [ "We kindly thank the Jagiellonian University for all their assistance and for co-organising at their venue in Kraków."
+                    ]
+                , img_ [class_ "logo", src_ "/static/university-logo.svg"]
+                ]
             , p_
                 []
                 [text "TODO thank additional people, e.g. Farhad, Sigmanificient, Carina, ..."]

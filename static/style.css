@@ -303,6 +303,13 @@ h2 {
   background-size: cover;
 }
 
+#venue {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  gap: 1em;
+}
+
 footer a:has(.logo) {
   @media (width >= 100em) {
     display: none;
