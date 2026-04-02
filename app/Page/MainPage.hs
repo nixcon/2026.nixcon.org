@@ -132,7 +132,7 @@ page =
                         , matrix = "@ners:nixos.dev"
                         }
                     , Organiser
-                        { image = "https://avatars.githubusercontent.com/u/51028009"
+                        { image = "https://john-rodewald.github.io/img/tiger.png"
                         , name = "john"
                         , github = "john-rodewald"
                         , matrix = "@john-rodewald:nixos.dev"
