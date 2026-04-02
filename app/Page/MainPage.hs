@@ -151,6 +151,20 @@ page =
                         }
                     ]
                 ]
+            , section_
+                [id_ "volunteers"]
+                [ p_
+                    []
+                    [ "Thank you to all the volunteers that are taking tasks off our hands to help us make this event happen."
+                    ]
+                , ul_
+                    []
+                    [ li_ [] ["Farhad Mehta"]
+                    , li_ [] ["Sigmanificient"]
+                    , li_ [] ["Carina Hahn"]
+                    , li_ [] ["Barbara Trojecka"]
+                    , li_ [] ["Lorenz Bischof"]
+                    ]
                 ]
             , section_
                 [id_ "venue"]
@@ -160,10 +174,6 @@ page =
                     ]
                 , img_ [class_ "logo", src_ "/static/university-logo.svg"]
                 ]
-            , p_
-                []
-                [text "TODO thank additional people, e.g. Farhad, Sigmanificient, Carina, ..."]
-            , p_ [] [text "TODO any other content"]
             ]
         , section_
             [id_ "ctf"]

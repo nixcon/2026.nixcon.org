@@ -271,6 +271,10 @@ h2 {
   align-self: flex-end;
 }
 
+#organisers {
+  gap: 3em;
+}
+
 #main-organisers ul {
   text-align: center;
 }
@@ -281,6 +285,7 @@ h2 {
   gap: 0.5em;
   align-items: center;
   margin: 2em;
+  white-space: nowrap;
 }
 
 .portrait {
@@ -308,6 +313,21 @@ h2 {
   grid-template-columns: 1fr;
   justify-items: center;
   gap: 1em;
+}
+
+#volunteers ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: space-between;
+
+  @media (width < 100em) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+#volunteers li {
+  margin: 1em;
+  color: #808;
 }
 
 footer a:has(.logo) {
