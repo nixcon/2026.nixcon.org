@@ -76,9 +76,14 @@ html, body {
 
 body {
   font-family: "Press Start 2P", "SerenityOS Emoji", system-ui;
-  font-size: 24px;
   @media (width < 500px) {
     font-size: 16px;
+  }
+  @media (width >= 1440px) {
+    font-size: 20px;
+  }
+  @media (width >= 1920px) {
+    font-size: 24px;
   }
   font-weight: 400;
   font-style: normal;
@@ -100,7 +105,7 @@ header {
   width: 100vw;
   z-index: 10;
   border-bottom: 4px solid #606fce;
-  @media (width < 100em) {
+  @media (width < 56rem) {
     display: none;
   }
 }
@@ -172,12 +177,12 @@ h2 {
 }
 
 #about {
-  @media (width < 100em) {
+  @media (width < 56rem) {
     display: flex;
     flex-direction: column;
     gap: 3em;
   }
-  @media (width >= 100em) {
+  @media (width >= 56rem) {
     display: grid;
     grid-template-columns: 3fr 2fr;
     gap: 5em;
@@ -320,7 +325,7 @@ h2 {
   grid-template-columns: 1fr 1fr 1fr;
   justify-items: space-between;
 
-  @media (width < 100em) {
+  @media (width < 56rem) {
     grid-template-columns: 1fr 1fr;
   }
 }
@@ -331,7 +336,7 @@ h2 {
 }
 
 footer a:has(.logo) {
-  @media (width >= 100em) {
+  @media (width >= 56rem) {
     display: none;
   }
   margin-bottom: 1em;
@@ -351,12 +356,12 @@ footer:before {
 footer .content {
   background-color: #392310;
   color: #FFF;
-  @media (width >= 100em) {
+  @media (width >= 56rem) {
     padding: 2em 4em;
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
-  @media (width < 100em) {
+  @media (width < 56rem) {
     padding: 2em;
     display: flex;
     flex-direction: column;
