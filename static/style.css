@@ -130,7 +130,7 @@ header nav ul {
 main {
   max-width: 75em;
   margin: auto;
-  padding: 4em;
+  padding: 2em;
   display: flex;
   flex-direction: column;
   gap: 4em;
@@ -172,7 +172,7 @@ h2 {
   background-color: #065D9E;
   color: #FFF;
   font-size: 150%;
-  padding: 1em 4em;
+  padding: 1em;
   clip-path: var(--pixel-corners);
   align-self: anchor-center;
   text-transform: uppercase;
