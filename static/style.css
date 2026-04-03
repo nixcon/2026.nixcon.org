@@ -10,34 +10,26 @@
 
 :root {
   --pixel-corners: polygon(
-    0px calc(100% - 32px),
-    8px calc(100% - 32px),
+    0px calc(100% - 16px),
     8px calc(100% - 16px),
-    16px calc(100% - 16px),
+    8px calc(100% - 8px),
     16px calc(100% - 8px),
-    32px calc(100% - 8px),
-    32px 100%,
-    calc(100% - 32px) 100%,
-    calc(100% - 32px) calc(100% - 8px),
+    16px 100%,
+    calc(100% - 16px) 100%,
     calc(100% - 16px) calc(100% - 8px),
-    calc(100% - 16px) calc(100% - 16px),
+    calc(100% - 8px) calc(100% - 8px),
     calc(100% - 8px) calc(100% - 16px),
-    calc(100% - 8px) calc(100% - 32px),
-    100% calc(100% - 32px),
-    100% 32px,
-    calc(100% - 8px) 32px,
+    100% calc(100% - 16px),
+    100% 16px,
     calc(100% - 8px) 16px,
-    calc(100% - 16px) 16px,
+    calc(100% - 8px) 8px,
     calc(100% - 16px) 8px,
-    calc(100% - 32px) 8px,
-    calc(100% - 32px) 0px,
-    32px 0px,
-    32px 8px,
+    calc(100% - 16px) 0px,
+    16px 0px,
     16px 8px,
-    16px 16px,
+    8px 8px,
     8px 16px,
-    8px 32px,
-    0px 32px
+    0px 16px
   );
 }
 
@@ -133,12 +125,13 @@ header nav ul {
 }
 
 main {
-  max-width: 65em;
+  max-width: 75em;
   margin: auto;
-  padding: 1em;
+  padding: 4em;
   display: flex;
   flex-direction: column;
   gap: 4em;
+  text-align: center;
 }
 
 main > section {
@@ -166,10 +159,7 @@ main > section {
 h1 {
   font-size: 300%;
   margin-bottom: 1em;
-  text-align: center;
   animation: blink 1s step-start 0s infinite;
-
-
 }
 
 h1 + .tagline {
@@ -179,10 +169,10 @@ h2 {
   background-color: #065D9E;
   color: #FFF;
   font-size: 150%;
-  padding: 1em 2em;
+  padding: 1em 4em;
   clip-path: var(--pixel-corners);
   align-self: anchor-center;
-  text-align: center;
+  text-transform: uppercase;
 }
 
 #about {
@@ -193,16 +183,20 @@ h2 {
   }
   @media (width >= 56rem) {
     display: grid;
-    grid-template-columns: 3fr 2fr;
-    gap: 5em;
+    grid-template-columns: 5fr 4fr;
+    gap: 3em;
   }
 }
 
-#overview {
+#about > * {
   display: flex;
   flex-direction: column;
   gap: 2em;
   align-self: center;
+  text-align: left;
+}
+
+#overview {
 }
 
 #overview li {
@@ -246,17 +240,17 @@ h2 {
 }
 
 .scrolls {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 20em);
-  gap: 1em;
+  font-size: 75%;
 }
 
 .scroll {
+  text-align: left;
   width: 20em;
+  margin: 1em;
   aspect-ratio: 29 / 37;
   background-image: url("scroll.png");
   background-size: cover;
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   gap: 1em;
   padding: 3em 3em 4em 3.5em;
@@ -270,9 +264,9 @@ h2 {
 }
 
 .scroll .details li {
-  font-size: 80%;
   position: relative;
   padding-left: 2em;
+  font-size: 80%;
 }
 
 .scroll .details li:before {
@@ -283,10 +277,6 @@ h2 {
 
 .scroll .price {
   align-self: flex-end;
-}
-
-#organisers {
-  gap: 2em;
 }
 
 #main-organisers {
