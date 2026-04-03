@@ -465,7 +465,7 @@ h2 {
 #volunteers {
   display: flex;
   flex-direction: column;
-  gap: 3em;
+  gap: 1em;
 }
 
 #volunteers ul {
