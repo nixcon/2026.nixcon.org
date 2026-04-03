@@ -77,6 +77,9 @@ body {
   @media (width >= 1920px) {
     font-size: 24px;
   }
+  @media (width >= 3200px) {
+    font-size: 30px;
+  }
   font-weight: 400;
   font-style: normal;
   color: #2F2F2F;
