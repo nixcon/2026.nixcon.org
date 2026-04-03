@@ -279,6 +279,39 @@ h2 {
   align-self: flex-end;
 }
 
+.ticket-note {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  align-items: center;
+  justify-items: start;
+  text-align: left;
+  gap: 1em;
+
+  @media (width < 40rem) {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    gap: 1em;
+  }
+}
+
+.ticket-note a {
+  grid-column: 2;
+
+  @media (width < 40rem) {
+    grid-column: 1;
+  }
+}
+
+.ticket-note img {
+  width: 48px;
+  height: 48px;
+}
+
+#organisers {
+  gap: 2em;
+}
+
 #main-organisers {
   display: flex;
   flex-direction: column;

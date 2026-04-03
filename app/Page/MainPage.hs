@@ -64,8 +64,18 @@ page =
                     , price = "512 €"
                     }
                 ]
-            , p_ [] [text "TODO link(s) to ticket shop"]
-            , p_ [] [text "TODO mention contributor vouchers"]
+            , section_
+                [class_ "ticket-note"]
+                [ img_ [src_ "/static/chest.png"]
+                , p_ [] ["NixCon tickets will be available soon!"]
+                , a_ [href_ "https://tickets.nixcon.org/nixcon-2026/"] ["To the ticket shop"]
+                ]
+            , section_
+                [class_ "ticket-note"]
+                [ img_ [src_ "/static/heart.png"]
+                , p_ [] ["Like last year, we will offer discounts for contributors."]
+                , a_ [href_ "/"] ["Check if you're eligible"]
+                ]
             ]
         , section_
             [id_ "sponsors"]
