@@ -472,15 +472,15 @@ h2 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   justify-items: space-between;
+  align-items: center;
+  justify-items: center;
 
   @media (width < 56rem) {
     grid-template-columns: 1fr 1fr;
-    justify-items: center;
   }
 
   @media (width < 40rem) {
     grid-template-columns: 1fr;
-    justify-items: start;
   }
 }
 
