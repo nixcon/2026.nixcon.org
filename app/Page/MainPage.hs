@@ -16,14 +16,18 @@ page =
             , h1_ [] [text "JOIN NIXCON 2026"]
             , div_
                 [id_ "about"]
-                [ div_ []
-                    $ p_ []
-                    . pure
-                    . text
-                    <$> [ "NixCon is the annual gathering of the Nix community."
-                        , "Developers, operators, researchers, and enthusiasts come together to share ideas, present new work, and explore the future of reproducible systems."
-                        , "Join us for talks, workshops, and discussions about everything from Nix fundamentals to large-scale production deployments."
+                [ div_
+                    []
+                    [ p_ [] ["NixCon is the annual gathering of the Nix community."]
+                    , p_
+                        []
+                        [ "Developers, operators, researchers, and enthusiasts come together to share ideas, present new work, and explore the future of reproducible systems."
                         ]
+                    , p_
+                        []
+                        [ "Join us for talks, workshops, and discussions about everything from Nix fundamentals to large-scale production deployments."
+                        ]
+                    ]
                 , ul_
                     [id_ "overview"]
                     [ li_ [] [text "25-28 September 2026\nFriday to Monday"]
@@ -84,7 +88,20 @@ page =
             [ h2_ [] [text "Organisers"]
             , section_
                 [id_ "main-organisers"]
-                [ p_
+                [ div_
+                    [id_ "social"]
+                    [ p_
+                        [class_ "social-link"]
+                        [ img_ [src_ "/static/keyboard.png"]
+                        , a_ [href_ "https://matrix.to/#/#nixcon:nixos.org"] ["Join Matrix room"]
+                        ]
+                    , p_
+                        [class_ "social-link"]
+                        [ img_ [src_ "/static/letter.png"]
+                        , a_ [href_ "mailto:nixcon@nixos.org"] ["Send us an email"]
+                        ]
+                    ]
+                , p_
                     []
                     [ text
                         "NixCon is organised by a dedicated team of volunteers from the Nix community."

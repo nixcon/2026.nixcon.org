@@ -200,6 +200,14 @@ h2 {
 }
 
 #overview {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  align-self: center;
+  text-align: left;
+}
+
+#overview {
 }
 
 #overview li {
@@ -240,6 +248,30 @@ h2 {
 #overview li:nth-of-type(5):before {
   content: "🚩";
   top: -0.5em;
+}
+
+#social {
+  display: flex;
+  flex-direction: row;
+  gap: 4em;
+  justify-content: center;
+
+  @media (width < 56rem) {
+    flex-direction: column;
+    gap: 2em;
+  }
+}
+
+.social-link {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-link img {
+  width: 48px;
 }
 
 .scrolls {
