@@ -139,7 +139,9 @@ page =
                     []
                     [ "We kindly thank the Jagiellonian University for all their assistance and for co-organising at their venue in Kraków."
                     ]
-                , img_ [class_ "logo", src_ "/static/university-logo.svg"]
+                , a_
+                    [href_ "https://en.uj.edu.pl/en_GB"]
+                    [img_ [class_ "logo", src_ "/static/university-logo.svg"]]
                 ]
             ]
         , section_
