@@ -1,3 +1,5 @@
+{-# LANGUAGE DuplicateRecordFields #-}
+
 module Page.MainPage where
 
 import Miso.Html.Element
@@ -38,14 +40,14 @@ page =
         , section_
             [id_ "tickets"]
             [ h2_ [] [text "Tickets"]
-            , scrolls
+            , ticketScrolls
                 [id_ "ticket-scrolls"]
-                [ Scroll
+                [ TicketScroll
                     { title = "Standard"
                     , details = ["Full conference access"]
                     , price = "128 €"
                     }
-                , Scroll
+                , TicketScroll
                     { title = "Supporter"
                     , details =
                         [ "Full conference access"
@@ -54,7 +56,7 @@ page =
                         ]
                     , price = "256 €"
                     }
-                , Scroll
+                , TicketScroll
                     { title = "Professional"
                     , details =
                         [ "Full conference access"
@@ -147,18 +149,20 @@ page =
         , section_
             [id_ "sponsors"]
             [ h2_ [] [text "Sponsors"]
-            , scrolls
+            , sponsorScrolls
                 [id_ "sponsor-scrolls"]
-                [ Scroll
-                    { title = "Bronze"
+                [ SponsorScroll
+                    { tier = Bronze
+                    , title = "Bronze"
                     , details =
                         [ "Logo on website"
                         , "1 Professional ticket"
                         ]
                     , price = "1024 €"
                     }
-                , Scroll
-                    { title = "Silver"
+                , SponsorScroll
+                    { tier = Silver
+                    , title = "Silver"
                     , details =
                         [ "Everything in Bronze"
                         , "Shout-out in the opening"
@@ -166,8 +170,9 @@ page =
                         ]
                     , price = "4096 €"
                     }
-                , Scroll
-                    { title = "Gold"
+                , SponsorScroll
+                    { tier = Gold
+                    , title = "Gold"
                     , details =
                         [ "Everything in Silver"
                         , "5 minute lightning talk slot"
@@ -176,8 +181,9 @@ page =
                         ]
                     , price = "8192 €"
                     }
-                , Scroll
-                    { title = "Diamond"
+                , SponsorScroll
+                    { tier = Diamond
+                    , title = "Diamond"
                     , details =
                         [ "Everything in Gold"
                         , "Logo in promo materials"
@@ -191,14 +197,14 @@ page =
             ]
         ]
 
-data Scroll = Scroll
+data TicketScroll = TicketScroll
     { title :: MisoString
     , details :: [MisoString]
     , price :: MisoString
     }
 
-scroll :: Scroll -> View model action
-scroll Scroll{..} =
+ticketScroll :: TicketScroll -> View model action
+ticketScroll TicketScroll{..} =
     li_
         [class_ "scroll"]
         [ div_ [class_ "title"] [text title]
@@ -206,8 +212,33 @@ scroll Scroll{..} =
         , ul_ [class_ "price"] [text price]
         ]
 
-scrolls :: [Attribute action] -> [Scroll] -> View model action
-scrolls attrs = ul_ (attrs <> [class_ "scrolls"]) . fmap scroll
+ticketScrolls :: [Attribute action] -> [TicketScroll] -> View model action
+ticketScrolls attrs = ul_ (attrs <> [class_ "ticket-scrolls"]) . fmap ticketScroll
+
+data SponsorshipTier
+    = Bronze
+    | Silver
+    | Gold
+    | Diamond
+
+data SponsorScroll = SponsorScroll
+    { tier :: SponsorshipTier
+    , title :: MisoString
+    , details :: [MisoString]
+    , price :: MisoString
+    }
+
+sponsorScroll :: SponsorScroll -> View model action
+sponsorScroll SponsorScroll{..} =
+    li_
+        [class_ "scroll"]
+        [ div_ [class_ "title"] [text title]
+        , ul_ [class_ "details"] [li_ [] [text t] | t <- details]
+        , ul_ [class_ "price"] [text price]
+        ]
+
+sponsorScrolls :: [Attribute action] -> [SponsorScroll] -> View model action
+sponsorScrolls attrs = ul_ (attrs <> [class_ "sponsor-scrolls"]) . fmap sponsorScroll
 
 data Organiser = Organiser
     { image :: MisoString
