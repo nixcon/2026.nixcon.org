@@ -78,52 +78,6 @@ page =
                 ]
             ]
         , section_
-            [id_ "sponsors"]
-            [ h2_ [] [text "Sponsors"]
-            , p_ [] [text "TODO where do we show actual sponsors (logos)?"]
-            , scrolls
-                [id_ "sponsor-scrolls"]
-                [ Scroll
-                    { title = "Bronze"
-                    , details =
-                        [ "Logo on website"
-                        , "1 Professional ticket"
-                        ]
-                    , price = "1024 €"
-                    }
-                , Scroll
-                    { title = "Silver"
-                    , details =
-                        [ "Everything in Bronze"
-                        , "Shout-out in the opening"
-                        , "2 Professional tickets"
-                        ]
-                    , price = "4096 €"
-                    }
-                , Scroll
-                    { title = "Gold"
-                    , details =
-                        [ "Everything in Silver"
-                        , "5 minute lightning talk slot"
-                        , "Dedicated booth space"
-                        , "4 Professional tickets"
-                        ]
-                    , price = "8192 €"
-                    }
-                , Scroll
-                    { title = "Diamond"
-                    , details =
-                        [ "Everything in Gold"
-                        , "Logo in promo materials"
-                        , "Add item to tote bags"
-                        , "8 Professional tickets"
-                        ]
-                    , price = "16483 €"
-                    }
-                ]
-            , p_ [] [text "TODO describe how to become a sponsor"]
-            ]
-        , section_
             [id_ "organisers"]
             [ h2_ [] [text "Organisers"]
             , section_
@@ -189,6 +143,51 @@ page =
             [id_ "ctf"]
             [ h2_ [] [text "CTF"]
             , p_ [] [text "TODO content"]
+            ]
+        , section_
+            [id_ "sponsors"]
+            [ h2_ [] [text "Sponsors"]
+            , scrolls
+                [id_ "sponsor-scrolls"]
+                [ Scroll
+                    { title = "Bronze"
+                    , details =
+                        [ "Logo on website"
+                        , "1 Professional ticket"
+                        ]
+                    , price = "1024 €"
+                    }
+                , Scroll
+                    { title = "Silver"
+                    , details =
+                        [ "Everything in Bronze"
+                        , "Shout-out in the opening"
+                        , "2 Professional tickets"
+                        ]
+                    , price = "4096 €"
+                    }
+                , Scroll
+                    { title = "Gold"
+                    , details =
+                        [ "Everything in Silver"
+                        , "5 minute lightning talk slot"
+                        , "Dedicated booth space"
+                        , "4 Professional tickets"
+                        ]
+                    , price = "8192 €"
+                    }
+                , Scroll
+                    { title = "Diamond"
+                    , details =
+                        [ "Everything in Gold"
+                        , "Logo in promo materials"
+                        , "Add item to tote bags"
+                        , "8 Professional tickets"
+                        ]
+                    , price = "16483 €"
+                    }
+                ]
+            , p_ [] [text "TODO describe how to become a sponsor"]
             ]
         ]
 
