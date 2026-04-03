@@ -340,6 +340,30 @@ h2 {
   height: 48px;
 }
 
+.sponsorship-price {
+  font-size: 80%;
+}
+
+.sponsorship-cta {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  align-items: center;
+  justify-items: end;
+  font-size: 85%;
+}
+
+.sponsorship-cta a {
+  color: #05C;
+}
+
+.sponsorship-cta a:hover {
+  color: #A30;
+}
+
+.sponsorship-cta img {
+  width: 32px;
+}
+
 #organisers {
   gap: 2em;
 }
