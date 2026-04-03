@@ -234,7 +234,7 @@ page =
                         , "Add item to tote bags"
                         , "8 Professional tickets"
                         ]
-                    , price = "16483 €"
+                    , price = "16384 €"
                     }
                 ]
             ]
