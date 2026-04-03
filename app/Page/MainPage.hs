@@ -39,7 +39,7 @@ page =
             [id_ "tickets"]
             [ h2_ [] [text "Tickets"]
             , scrolls
-                []
+                [id_ "ticket-scrolls"]
                 [ Scroll
                     { title = "Standard"
                     , details = ["Full conference access"]
@@ -82,7 +82,7 @@ page =
             [ h2_ [] [text "Sponsors"]
             , p_ [] [text "TODO where do we show actual sponsors (logos)?"]
             , scrolls
-                []
+                [id_ "sponsor-scrolls"]
                 [ Scroll
                     { title = "Bronze"
                     , details =

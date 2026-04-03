@@ -241,6 +241,38 @@ h2 {
 
 .scrolls {
   font-size: 75%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 20em);
+  gap: 1em;
+}
+
+#ticket-scrolls {
+  display: grid;
+  grid-template-columns: repeat(3, min-content);
+  justify-items: center;
+  justify-content: center;
+  gap: 1em;
+
+  @media (width < 64rem) {
+    grid-template-columns: repeat(2, min-content);
+  }
+
+  @media (width < 56rem) {
+    grid-template-columns: min-content;
+  }
+}
+
+#sponsor-scrolls {
+  display: grid;
+  grid-template-columns: repeat(2, min-content);
+  gap: 0 2em;
+  justify-items: center;
+  justify-content: center;
+
+  @media (width < 40rem) {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
 }
 
 .scroll {
