@@ -87,7 +87,7 @@ page =
                 [ p_
                     []
                     [ text
-                        "NixCon is not organised by a dedicated team of volunteers from the Nix community."
+                        "NixCon is organised by a dedicated team of volunteers from the Nix community."
                     ]
                 , organisers
                     []
@@ -144,8 +144,32 @@ page =
             ]
         , section_
             [id_ "ctf"]
-            [ h2_ [] [text "CTF"]
-            , p_ [] [text "TODO content"]
+            [ h2_
+                []
+                [text "CTF"]
+            , p_
+                [class_ "ctf-note"]
+                [ img_ [src_ "/static/crown.png"]
+                , span_
+                    []
+                    [ "Take part in the very first NixCon CTF!"
+                    ]
+                ]
+            , p_
+                []
+                [ text
+                    "Join the first-ever Nix CTF for a fun experience. Collaborate, hack, and experiment with others to solve interesting challenges and learn more about Nix. The event is beginner-friendly and open to all levels, so anyone can jump in and meet new people."
+                ]
+            , p_
+                []
+                [ text
+                    "The winner gets a lousy t-shirt with a special print. The CTF will take place on Sunday (27 September). You can either join in person or online from wherever you are."
+                ]
+            , p_
+                []
+                [ text
+                    "Check back here frequently and join our conference communication channels as the event draws closer to stay up-to-date."
+                ]
             ]
         , section_
             [id_ "sponsors"]

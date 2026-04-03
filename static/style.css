@@ -458,6 +458,22 @@ h2 {
   white-space: nowrap;
 }
 
+#ctf img {
+  width: 48px;
+}
+
+.ctf-note {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+
+  @media (width < 40rem) {
+    flex-direction: column;
+  }
+}
+
 footer a:has(.logo) {
   @media (width >= 56rem) {
     display: none;
