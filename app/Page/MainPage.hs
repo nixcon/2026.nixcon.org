@@ -251,8 +251,8 @@ ticketScroll TicketScroll{..} =
     li_
         [class_ "scroll"]
         [ div_ [class_ "title"] [text title]
+        , div_ [class_ "price"] [text price]
         , ul_ [class_ "details"] [li_ [] [text t] | t <- details]
-        , ul_ [class_ "price"] [text price]
         ]
 
 ticketScrolls :: [Attribute action] -> [TicketScroll] -> View model action
@@ -288,7 +288,7 @@ sponsorScroll SponsorScroll{..} =
     li_
         [class_ "scroll"]
         [ div_ [class_ "title"] [text title]
-        , div_ [class_ "sponsorship-price"] [text price]
+        , div_ [class_ "price"] [text price]
         , ul_ [class_ "details"] [li_ [] [text t] | t <- details]
         , section_
             [class_ "sponsorship-cta"]

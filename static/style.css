@@ -342,10 +342,6 @@ h2 {
   left: 0;
 }
 
-.scroll .price {
-  align-self: flex-end;
-}
-
 .ticket-note {
   display: grid;
   grid-template-columns: min-content 1fr;
@@ -375,7 +371,7 @@ h2 {
   height: 48px;
 }
 
-.sponsorship-price {
+.price {
   font-size: 80%;
 }
 
