@@ -32,8 +32,8 @@ main = do
     uri <- getURI
     consoleLog . ms . show $ route @PageId uri
     let model = emptyModel & either (const id) (fromVL #currentPage .~) (route uri)
-    startApp defaultEvents $
-        (component model update view)
+    startApp defaultEvents
+        $ (component model update view)
             { subs = [routerSub $ either (const NoOp) GoToPage]
             }
 
@@ -57,8 +57,8 @@ instance Router PageId where
     fromRoute PrivacyPolicy = [CaptureOrPathToken "privacy"]
     fromRoute CodeOfConduct = [CaptureOrPathToken "conduct"]
     routeParser = Parser \_ tokens ->
-        maybeToList $
-            List.firstJust
+        maybeToList
+            $ List.firstJust
                 (\r -> (r,) <$> List.stripPrefix (fromRoute @PageId r) tokens)
                 [minBound .. maxBound]
 
