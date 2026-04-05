@@ -39,19 +39,11 @@
       pname = "nixcon-website";
       ghc = "ghc912";
       haskell-overlay = pkgs: with pkgs.haskell.lib.compose; lib.composeManyExtensions [
-        (inputs.dramaturge.overlays.haskell pkgs)
         (hfinal: hprev: lib.mapAttrs (pname: dir: hfinal.callCabal2nix pname (sourceFilter dir) { }) projects)
         (hfinal: hprev: {
           ${pname} = hprev.${pname} // {
             staticAssets = pkgs.callPackage ./static-assets.nix { inherit inputs; };
           };
-          nixcon-website-export = hprev.nixcon-website-export.overrideAttrs (attrs: {
-            nativeBuildInputs = [ pkgs.makeWrapper ] ++ attrs.nativeBuildInputs or [ ];
-            postInstall = ''
-              ${attrs.postInstall or ""}
-              wrapProgram "$out"/bin/export --prefix PATH : "${lib.makeBinPath [pkgs.firefox]}"
-            '';
-          });
           # jsaddle-wasm = addBuildDepend hfinal.parser-regex hprev.jsaddle-wasm;
           miso = enableCabalFlag "template-haskell" (hfinal.callCabal2nix "miso" inputs.miso { });
           feedback = hfinal.callCabal2nix "feedback"
@@ -130,6 +122,7 @@
         })
       ];
       overlay = lib.composeManyExtensions [
+        inputs.dramaturge.overlays.default
         (final: prev: {
           haskell = prev.haskell // {
             packageOverrides = lib.composeManyExtensions [
@@ -162,7 +155,10 @@
           default = static;
           static = pkgs.runCommand "nixcon-website"
             {
-              nativeBuildInputs = with pkgs; [ http-server ];
+              nativeBuildInputs = with pkgs; [
+                tourist
+                http-server
+              ];
             } ''
             cp -r "${wasmPkgs.haskell.packages.${ghc}.${pname}.staticAssets}" "$out"
             cd "$out"
@@ -170,7 +166,7 @@
             rm -rf static/browser_wasi_shim static/main.js
             export HOME=$TMPDIR
             http-server "${wasmPkgs.haskell.packages.${ghc}.${pname}.dist}" --brotli --gzip &
-            "${pkgs.haskellPackages.nixcon-website-export}"/bin/export
+            tourist http://localhost:8080
             find -name "*.html" -exec sed -i '/\/static\/main.js/d' {} +
           '';
           wasmServer = pkgs.writeShellApplication {

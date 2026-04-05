@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1775201075,
-        "narHash": "sha256-bXNRiMulWFGfBYdQ+weHRC8PilEg5q2ySotAkxc6B2M=",
+        "lastModified": 1775475882,
+        "narHash": "sha256-Hm4+CXER2wQyDN7XkJ8GCIZ46sd3MTcEAt1KX4tAHK0=",
         "owner": "ners",
         "repo": "dramaturge",
-        "rev": "ac909b37d8b01376b915285ad9752bd9e5c6f8c0",
+        "rev": "fe7eb13e896aef32bedf7dc544577b99934148de",
         "type": "github"
       },
       "original": {
@@ -141,11 +141,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1775238735,
-        "narHash": "sha256-ifkmaORq5IvEBdKSJtNePwcJIYE5tr70hFeok2ry1Fo=",
+        "lastModified": 1775243620,
+        "narHash": "sha256-pzxsgJugQAprArBhSHN49k0gd3IZ2vf1xqo36w7l4Ng=",
         "owner": "haskell-miso",
         "repo": "miso",
-        "rev": "df64e3f1ffde3d0ec39528fd7b6f2f07993c593c",
+        "rev": "6c34a81928caa7e6d11a713a9d65a77c8d83b985",
         "type": "github"
       },
       "original": {
