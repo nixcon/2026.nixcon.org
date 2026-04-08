@@ -82,6 +82,12 @@ page =
                 , p_ [] ["Like last year, we will offer discounts for contributors."]
                 , a_ [href_ "/"] ["Check if you're eligible"]
                 ]
+            , section_
+                [class_ "ticket-note"]
+                [ img_ [src_ "/static/home.png"]
+                , p_ [] ["We are working out discounts with local hotels for you."]
+                , a_ [href_ "/accommodation"] ["See all hotel options"]
+                ]
             ]
         , section_
             [id_ "organisers"]
