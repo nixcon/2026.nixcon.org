@@ -13,7 +13,7 @@ page =
         [ section_
             [id_ "hero"]
             [ img_ [class_ "logo", src_ "/static/icon.svg"]
-            , h1_ [] [text "JOIN NIXCON 2026"]
+            , h1_ [id_ "nixcon-title"] [text "JOIN NIXCON 2026"]
             , div_
                 [id_ "about"]
                 [ div_
@@ -26,6 +26,10 @@ page =
                     , p_
                         []
                         [ "Join us for talks, workshops, and discussions about everything from Nix fundamentals to large-scale production deployments."
+                        ]
+                    , p_
+                        []
+                        [ "We'll organise city activities so that you can bring along a partner or a friend that just wants to travel with you."
                         ]
                     ]
                 , ul_
@@ -81,6 +85,12 @@ page =
                 [ img_ [src_ "/static/heart.png"]
                 , p_ [] ["Like last year, we will offer discounts for contributors."]
                 , a_ [href_ "/"] ["Check if you're eligible"]
+                ]
+            , section_
+                [class_ "ticket-note"]
+                [ img_ [src_ "/static/home.png"]
+                , p_ [] ["We are working out discounts with local hotels for you."]
+                , a_ [href_ "/accommodation"] ["See all hotel options"]
                 ]
             ]
         , section_
