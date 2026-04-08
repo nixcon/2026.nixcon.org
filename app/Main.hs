@@ -18,6 +18,7 @@ import Miso.Prelude hiding (update, view)
 import Miso.Router hiding (href_)
 import Miso.Router qualified as Router
 import Miso.Util.Parser (ParserT (..))
+import Page.Accommodation qualified
 import Page.CodeOfConduct qualified
 import Page.LegalDisclosure qualified
 import Page.MainPage qualified
@@ -49,6 +50,7 @@ data PageId
     | LegalDisclosure
     | PrivacyPolicy
     | CodeOfConduct
+    | Accommodation
     deriving stock (Generic, Show, Eq, Bounded, Enum)
 
 instance Router PageId where
@@ -56,6 +58,7 @@ instance Router PageId where
     fromRoute LegalDisclosure = [CaptureOrPathToken "legal"]
     fromRoute PrivacyPolicy = [CaptureOrPathToken "privacy"]
     fromRoute CodeOfConduct = [CaptureOrPathToken "conduct"]
+    fromRoute Accommodation = [CaptureOrPathToken "accommodation"]
     routeParser = Parser \_ tokens ->
         maybeToList
             $ List.firstJust
@@ -105,6 +108,7 @@ view Model{..} =
             LegalDisclosure -> Page.LegalDisclosure.page
             PrivacyPolicy -> Page.PricavyPolicy.page
             CodeOfConduct -> Page.CodeOfConduct.page
+            Accommodation -> Page.Accommodation.page
         , footer_
             []
             [ div_
