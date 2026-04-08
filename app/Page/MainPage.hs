@@ -27,6 +27,10 @@ page =
                         []
                         [ "Join us for talks, workshops, and discussions about everything from Nix fundamentals to large-scale production deployments."
                         ]
+                    , p_
+                        []
+                        [ "We'll organise city activities so that you can bring along your partner or a friend that wants to experience Kraków with you."
+                        ]
                     ]
                 , ul_
                     [id_ "overview"]
