@@ -412,7 +412,7 @@ h2 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 
-  @media (width < 56rem) {
+  @media (width < 60rem) {
     grid-template-columns: 30% 30%;
     justify-content: center;
   }
