@@ -159,10 +159,13 @@ main > section {
   }
 }
 
+#nixcon-title {
+  animation: blink 1s step-start 0s infinite;
+}
+
 h1 {
   font-size: 300%;
   margin-bottom: 1em;
-  animation: blink 1s step-start 0s infinite;
 }
 
 h1 + .tagline {
