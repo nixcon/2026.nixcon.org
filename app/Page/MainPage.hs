@@ -13,7 +13,7 @@ page =
         [ section_
             [id_ "hero"]
             [ img_ [class_ "logo", src_ "/static/icon.svg"]
-            , h1_ [] [text "JOIN NIXCON 2026"]
+            , h1_ [id_ "nixcon-title"] [text "JOIN NIXCON 2026"]
             , div_
                 [id_ "about"]
                 [ div_
