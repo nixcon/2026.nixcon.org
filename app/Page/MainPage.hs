@@ -77,7 +77,7 @@ page =
             , section_
                 [class_ "ticket-note"]
                 [ img_ [src_ "/static/chest.png"]
-                , p_ [] ["NixCon tickets will be available soon!"]
+                , p_ [] ["NixCon tickets are now available!"]
                 , a_ [href_ "https://tickets.nixcon.org/nixcon-2026/"] ["To the ticket shop"]
                 ]
             , section_
