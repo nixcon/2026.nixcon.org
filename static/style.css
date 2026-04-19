@@ -94,6 +94,10 @@ a:hover {
 
 main a {
   color: #00F;
+  border-bottom: 0.2em solid #00F;
+  &:hover {
+    border-bottom-color: #F00;
+  }
 }
 
 
@@ -357,14 +361,6 @@ h2 {
   align-items: center;
   justify-items: end;
   font-size: 85%;
-}
-
-.sponsorship-cta a {
-  color: #05C;
-}
-
-.sponsorship-cta a:hover {
-  color: #A30;
 }
 
 .sponsorship-cta img {
