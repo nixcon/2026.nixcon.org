@@ -16,7 +16,6 @@
   font-style: inherit;
   font-weight: inherit;
   color: inherit;
-  text-decoration: inherit;
   box-sizing: border-box;
   line-height: inherit;
   border: none;
@@ -86,6 +85,12 @@ header .logo {
 
 header nav a {
   padding: 1em 2em;
+}
+
+a {
+    --one-font-pixel: .2ex; /* one PixelOperator8, a x is 5 pixel tall */
+    text-underline-offset: var(--one-font-pixel);
+    text-decoration-thickness: var(--one-font-pixel);
 }
 
 a:hover {
