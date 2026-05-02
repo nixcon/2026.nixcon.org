@@ -75,19 +75,19 @@ page =
                     }
                 ]
             , section_
-                [class_ "ticket-note"]
+                [class_ "note"]
                 [ img_ [src_ "/static/chest.png"]
                 , p_ [] ["NixCon tickets are now available!"]
                 , a_ [href_ "https://tickets.nixcon.org/nixcon-2026/"] ["To the ticket shop"]
                 ]
             , section_
-                [class_ "ticket-note"]
+                [class_ "note"]
                 [ img_ [src_ "/static/heart.png"]
                 , p_ [] ["Like last year, we will offer discounts for contributors."]
                 , a_ [href_ "https://vouchers.nixcon.org"] ["Check if you're eligible"]
                 ]
             , section_
-                [class_ "ticket-note"]
+                [class_ "note"]
                 [ img_ [src_ "/static/home.png"]
                 , p_ [] ["We are working out discounts with local hotels for you."]
                 , a_ [href_ "/accommodation"] ["See all hotel options"]
@@ -97,7 +97,7 @@ page =
             [id_ "cfp"]
             [ h2_ [] [text "CfP"]
             , section_
-                [class_ "ticket-note"]
+                [class_ "note"]
                 [ img_ [src_ "/static/document.png"]
                 , h4_ [] ["The CfP for NixCon 2026 is open. Submit your talk proposals!"]
                 , a_ [href_ "https://talks.nixcon.org/nixcon-2026/"] ["To the CfP"]

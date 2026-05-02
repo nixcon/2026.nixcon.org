@@ -322,7 +322,7 @@ h2 {
   left: 0;
 }
 
-.ticket-note {
+.note {
   display: grid;
   grid-template-columns: min-content 1fr;
   align-items: center;
@@ -338,7 +338,7 @@ h2 {
   }
 }
 
-.ticket-note a {
+.note a {
   grid-column: 2;
 
   @media (width < 40rem) {
@@ -346,7 +346,7 @@ h2 {
   }
 }
 
-.ticket-note img {
+.note img {
   width: 48px;
   height: 48px;
 }
