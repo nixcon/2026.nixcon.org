@@ -94,6 +94,16 @@ page =
                 ]
             ]
         , section_
+            [id_ "cfp"]
+            [ h2_ [] [text "CfP"]
+            , section_
+                [class_ "ticket-note"]
+                [ img_ [src_ "/static/document.png"]
+                , h4_ [] ["The CfP for NixCon 2026 is open. Submit your talk proposals!"]
+                , a_ [href_ "https://talks.nixcon.org/nixcon-2026/"] ["To the CfP"]
+                ]
+            ]
+        , section_
             [id_ "organisers"]
             [ h2_ [] [text "Organisers"]
             , section_
