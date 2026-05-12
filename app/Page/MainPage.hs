@@ -301,13 +301,13 @@ mkSponsorshipTierLink :: SponsorshipTier -> MisoString
 mkSponsorshipTierLink tier =
     case tier of
         Bronze ->
-            "mailto:sponsor@nixos.org?subject=NixCon%202025%20Sponsorship%3A%20%3CYour%20Company%20Name%3E&body=Please%20provide%20at%20least%20the%20following%20information%3A%0A%20%20-%20Company%20Name%20and%20Website%3A%0A%20%20-%20Desired%20Tier%3A%20Bronze%0A%20%20-%20Desired%20Amount%3A%201024%20EUR%0A%20%20"
+            "mailto:foundation@nixos.org?subject=NixCon%20Sponsorship%3A%20%3CYour%20Company%20Name%3E&body=Please%20provide%20at%20least%20the%20following%20information%3A%0A%20%20-%20Company%20Name%20and%20Website%3A%0A%20%20-%20Desired%20Tier%3A%20Bronze%0D%0A-%20Desired%20Amount%3A%201024%20EUR%0A%20%20"
         Silver ->
-            "mailto:sponsor@nixos.org?subject=NixCon%202025%20Sponsorship%3A%20%3CYour%20Company%20Name%3E&body=Please%20provide%20at%20least%20the%20following%20information%3A%0A%20%20-%20Company%20Name%20and%20Website%3A%0A%20%20-%20Desired%20Tier%3A%20Silver%0A%20%20-%20Desired%20Amount%3A%204096%20EUR%0A%20%20"
+            "mailto:foundation@nixos.org?subject=NixCon%20Sponsorship%3A%20%3CYour%20Company%20Name%3E&body=Please%20provide%20at%20least%20the%20following%20information%3A%0A%20%20-%20Company%20Name%20and%20Website%3A%0A%20%20-%20Desired%20Tier%3A%20Silver%0A%20%20-%20Desired%20Amount%3A%204096%20EUR%0A%20%20"
         Gold ->
-            "mailto:sponsor@nixos.org?subject=NixCon%202025%20Sponsorship%3A%20%3CYour%20Company%20Name%3E&body=Please%20provide%20at%20least%20the%20following%20information%3A%0A%20%20-%20Company%20Name%20and%20Website%3A%0A%20%20-%20Desired%20Tier%3A%20Gold%0A%20%20-%20Desired%20Amount%3A%208192%20EUR%0A%20%20"
+            "mailto:foundation@nixos.org?subject=NixCon%20Sponsorship%3A%20%3CYour%20Company%20Name%3E&body=Please%20provide%20at%20least%20the%20following%20information%3A%0A%20%20-%20Company%20Name%20and%20Website%3A%0A%20%20-%20Desired%20Tier%3A%20Gold%0A%20%20-%20Desired%20Amount%3A%208192%20EUR%0A%20%20"
         Diamond ->
-            "mailto:sponsor@nixos.org?subject=NixCon%202025%20Sponsorship%3A%20%3CYour%20Company%20Name%3E&body=Please%20provide%20at%20least%20the%20following%20information%3A%0A%20%20-%20Company%20Name%20and%20Website%3A%0A%20%20-%20Desired%20Tier%3A%20Diamond%0A%20%20-%20Desired%20Amount%3A%2016384%20EUR%0A%20%20"
+            "mailto:foundation@nixos.org?subject=NixCon%20Sponsorship%3A%20%3CYour%20Company%20Name%3E&body=Please%20provide%20at%20least%20the%20following%20information%3A%0A%20%20-%20Company%20Name%20and%20Website%3A%0A%20%20-%20Desired%20Tier%3A%20Diamond%0A%20%20-%20Desired%20Amount%3A%2016384%20EUR%0A%20%20"
 
 sponsorScroll :: SponsorScroll -> View model action
 sponsorScroll SponsorScroll{..} =
