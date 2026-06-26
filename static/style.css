@@ -125,22 +125,24 @@ main > section {
 
 #hero {
   align-items: center;
+  gap: 1.5em;
+  padding: 5em;
 }
 
 #hero .logo {
-  height: 15em;
+  height: 7em;
   margin: 3em 0 1em 0;
 }
 
 #hero #nixcon-date-location {
   color: #5e6cc7;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   text-transform: uppercase;
 }
 
 #hero #nixcon-description {
-  font-size: 1.5rem;
-  line-height: 1.5;
+  font-size: 1.4rem;
+  line-height: 2;
   max-width: 30em;
 }
 
@@ -170,6 +172,7 @@ main > section {
 
 #nixcon-title {
   animation: blink 1s step-start 0s infinite;
+  font-size: 3rem;
   margin-bottom: 0;
 }
 
