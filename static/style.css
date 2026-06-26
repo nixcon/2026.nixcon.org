@@ -126,7 +126,8 @@ main > section {
 #hero {
   align-items: center;
   gap: 1.5em;
-  padding: 5em;
+  padding-top: 5em;
+  padding-bottom: 1em;
 }
 
 #hero .logo {
@@ -462,6 +463,17 @@ h2 {
 
 #venue img {
     max-width: 80vw;
+}
+
+#venue-images-list {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+  justify-content: center;
+}
+
+#venue-images-list li img {
+  max-width: 20em;
 }
 
 #volunteers {

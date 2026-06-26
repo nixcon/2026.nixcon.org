@@ -26,10 +26,18 @@ page =
                     ]
             ]
         , section_
+            [id_ "venue-images"]
+            [ ul_ [id_ "venue-images-list"]
+                [ li_ [id_ "venue-image-1"] [img_ [src_ "https://placehold.co/600x400"]]
+                , li_ [id_ "venue-image-2"] [img_ [src_ "https://placehold.co/600x400"]]
+                , li_ [id_ "venue-image-3"] [img_ [src_ "https://placehold.co/600x400"]]
+                ]
+            ]
+        , section_
             [id_ "about"]
                 [ div_
                     []
-                    [ p_ [] ["NixCon is the annual gathering of the Nix community."]
+                    [ p_ [] ["What to expect at this year's NixCon:"]
                     , p_
                         []
                         [ "Developers, operators, researchers, and enthusiasts come together to share ideas, present new work, and explore the future of reproducible systems."
