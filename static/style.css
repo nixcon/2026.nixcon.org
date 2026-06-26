@@ -519,3 +519,66 @@ footer ul {
   grid-template-columns: repeat(auto-fill, 4em);
   row-gap: 0;
 }
+
+.sponsor  {
+  position: relative;
+}
+
+.sponsor:hover {
+  filter: brightness(1.25); 
+}
+
+.sponsor-frame {
+  background: #2F2F2F;
+  width: 11em;
+}
+
+#sponsors {
+  align-items: center;
+}
+
+#sponsors ul {
+  display: flex;
+  justify-content: center;
+  gap: 6em;
+  max-width: 64em;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.sponsor-tier-title {
+  width: 100%;
+  color: #065D9E;
+  font-size: 120%;
+}
+
+.hidden {
+  display: none;
+}
+
+.sponsor-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.sponsor-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.sponsor-logo {
+  width: 100%;
+  padding: 2em;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  filter: brightness(0) invert(1);
+}
+
+.sponsor-link {
+  border: none;
+}
+

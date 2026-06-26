@@ -217,8 +217,8 @@ page =
                 ]
             ]
         , section_
-            [id_ "sponsors"]
-            [ h2_ [] [text "Sponsors"]
+            [id_ "sponsorship"]
+            [ h2_ [] [text "Sponsorship"]
             , sponsorScrolls
                 [id_ "sponsor-scrolls"]
                 [ SponsorScroll
@@ -264,6 +264,25 @@ page =
                     }
                 ]
             ]
+        , section_
+            [id_ "sponsors"]
+            [ h2_ [] [text "Sponsors"]
+            , sponsors
+                [class_ "sponsor-rows"]
+                [ Sponsor
+                    { tier = Gold
+                    , name = "Sponsor"
+                    , image = "/static/sponsor-logos/pdt-partners.svg"
+                    , website = "https://www.pdtpartners.com/"
+                    }
+                , Sponsor
+                    { tier = Gold
+                    , name = "Sponsor"
+                    , image = "/static/sponsor-logos/flox.svg"
+                    , website = "https://flox.dev/"
+                    }
+                ]
+            ]
         ]
 
 data TicketScroll = TicketScroll
@@ -289,6 +308,7 @@ data SponsorshipTier
     | Silver
     | Gold
     | Diamond
+    deriving (Eq)
 
 data SponsorScroll = SponsorScroll
     { tier :: SponsorshipTier
@@ -343,3 +363,77 @@ organiser Organiser{..} =
 
 organisers :: [Attribute action] -> [Organiser] -> View model action
 organisers attrs = ul_ attrs . fmap organiser
+
+data Sponsor = Sponsor
+    { name :: MisoString
+    , tier :: SponsorshipTier
+    , image :: MisoString
+    , website :: MisoString
+    }
+
+sponsor :: Sponsor -> View model action
+sponsor Sponsor{..} =
+    a_
+        [href_ website, class_ "sponsor-link"]
+        [ li_
+            []
+            [ div_
+                [class_ "sponsor"]
+                [ img_ [class_ "sponsor-frame", src_ frame]
+                , img_ [class_ "sponsor-logo", src_ image]
+                ]
+            ]
+        ]
+  where
+    frame =
+        case tier of
+            Bronze -> "/static/sponsor-frames/bronze.png"
+            Silver -> "/static/sponsor-frames/silver.png"
+            Gold -> "/static/sponsor-frames/gold.png"
+            Diamond -> "/static/sponsor-frames/diamond.png"
+
+sponsorTierTitle :: SponsorshipTier -> View model action
+sponsorTierTitle tier =
+    h3_
+        [class_ "sponsor-tier-title"]
+        [ title
+        ]
+  where
+    title = case tier of
+        Bronze -> "Bronze Tier"
+        Silver -> "Silver Tier"
+        Gold -> "Gold Tier"
+        Diamond -> "Diamond Tier"
+
+sponsorRow :: MisoString -> [Sponsor] -> View model action
+sponsorRow _ [] = section_ [class_ "hidden"] []
+sponsorRow title sponsorsList =
+    li_
+        [class_ "sponsor-row"]
+        [ titleElem
+        , ul_ [] (sponsor <$> sponsorsList)
+        ]
+  where
+    titleElem =
+        h3_
+            [class_ "sponsor-tier-title"]
+            [ text title
+            ]
+
+sponsors :: [Attribute action] -> [Sponsor] -> View model action
+sponsors attrs sponsorsList =
+    ul_
+        attrs
+        [ sponsorRow
+            "Diamond Tier"
+            (filter (\s -> s.tier == Diamond) sponsorsList)
+        , sponsorRow
+            "Gold Tier"
+            (filter (\s -> s.tier == Gold) sponsorsList)
+        , sponsorRow
+            "Silver Tier"
+            (filter (\s -> s.tier == Silver) sponsorsList)
+        , sponsorRow
+            "Bronze Tier"
+            (filter (\s -> s.tier == Bronze) sponsorsList)
+        ]
