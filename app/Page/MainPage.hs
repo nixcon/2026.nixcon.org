@@ -13,9 +13,20 @@ page =
         [ section_
             [id_ "hero"]
             [ img_ [class_ "logo", src_ "/static/icon.svg"]
-            , h1_ [id_ "nixcon-title"] [text "JOIN NIXCON 2026"]
-            , div_
-                [id_ "about"]
+                , span_ [id_ "nixcon-date-location"] [text "25-28 September | KRAKOW"]
+                , h1_ [id_ "nixcon-title"] [text "JOIN NIXCON 2026"]
+                , p_ [id_ "nixcon-description"] [text "NixCon is the annual gathering of the Nix community."]
+                , ul_ [id_ "nixcon-hero-links"]
+                    [ li_ [class_ "hero-link"] [
+                        img_ [src_ "/static/chest.png"],
+                        a_ [href_ "/"] [text "Get Tickets"]]
+                    , li_ [class_ "hero-link"] [
+                        img_ [src_ "/static/sponsor.png"],
+                        a_ [href_ "/"] [text "Become a Sponsor"]]
+                    ]
+            ]
+        , section_
+            [id_ "about"]
                 [ div_
                     []
                     [ p_ [] ["NixCon is the annual gathering of the Nix community."]
@@ -44,7 +55,6 @@ page =
                     , li_ [] [text "First NixCon CTF ever!"]
                     ]
                 ]
-            ]
         , section_
             [id_ "tickets"]
             [ h2_ [] [text "Tickets"]

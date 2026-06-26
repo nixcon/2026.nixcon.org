@@ -132,6 +132,36 @@ main > section {
   margin: 3em 0 1em 0;
 }
 
+#hero #nixcon-date-location {
+  color: #5e6cc7;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+#hero #nixcon-description {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  max-width: 30em;
+}
+
+#hero #nixcon-hero-links {
+  display: flex;
+  flex-direction: row;
+  gap: 3em;
+}
+
+#hero .hero-link {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5em;
+  font-size: 1rem;
+  align-items: center;
+}
+
+#hero .hero-link img {
+  height: 2.5em;
+}
+
 @keyframes blink {
   36% {
     opacity: 0.075;
@@ -140,6 +170,7 @@ main > section {
 
 #nixcon-title {
   animation: blink 1s step-start 0s infinite;
+  margin-bottom: 0;
 }
 
 h1 {
