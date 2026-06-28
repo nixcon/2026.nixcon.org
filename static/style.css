@@ -178,7 +178,15 @@ main > section {
 #hero #nixcon-hero-links {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   gap: 3em;
+}
+
+@media (width < 56rem) {
+  #hero #nixcon-hero-links {
+    gap: 2em;
+    justify-content: center;
+  }
 }
 
 #hero .hero-link {
@@ -261,8 +269,15 @@ h2 {
   overflow: hidden;
   width: 100%;
   background: url('/static/bird.png') no-repeat bottom center;
+  transform: scaleX(-100%);
   background-size: contain;
   z-index: -1;
+}
+
+@media (width < 56rem) {
+    #about:after {
+      top: 50%;
+    }
 }
 
 #about > * {
@@ -564,6 +579,7 @@ h2 {
   flex-direction: row;
   gap: 0.5em;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 #venue-images-list li img {
