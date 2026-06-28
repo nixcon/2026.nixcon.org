@@ -39,6 +39,7 @@
 html, body {
   width: 100vw;
   max-width: 100vw;
+  overflow-x: hidden;
 }
 
 body {
@@ -128,6 +129,33 @@ main > section {
   gap: 1.5em;
   padding-top: 5em;
   padding-bottom: 1em;
+  position: relative;
+}
+
+#hero:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  height: 14rem;
+  width: 100%;
+  background: url('/static/cloud.png') no-repeat top center;
+  background-size: contain;
+  z-index: -1;
+}
+
+#hero:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: -50%;
+  height: 14rem;
+  overflow: hidden;
+  width: 100%;
+  background: url('/static/cloud.png') no-repeat bottom center;
+  background-size: contain;
+  opacity: 0.5;
+  z-index: -1;
 }
 
 #hero .logo {
@@ -204,6 +232,32 @@ h2 {
     grid-template-columns: 5fr 4fr;
     gap: 3em;
   }
+  position: relative;
+}
+
+#about:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -57%;
+  height: 14rem;
+  width: 100%;
+  background: url('/static/bird.png') no-repeat top center;
+  background-size: contain;
+  z-index: -1;
+}
+
+#about:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -57%;
+  height: 14rem;
+  overflow: hidden;
+  width: 100%;
+  background: url('/static/bird.png') no-repeat bottom center;
+  background-size: contain;
+  z-index: -1;
 }
 
 #about > * {
@@ -223,6 +277,22 @@ h2 {
 }
 
 #overview {
+    background: #38667fFF;
+    color: #fff;
+    position: relative;
+    padding: 10rem 2rem;
+}
+
+#overview:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: block;
+    background: url('/static/box_teal.png') no-repeat top center;
+    background-size: fill;
 }
 
 #overview li {
@@ -474,6 +544,8 @@ h2 {
 
 #venue-images-list li img {
   max-width: 20em;
+  height: 100%;
+  object-fit: cover;
 }
 
 #volunteers {
@@ -706,3 +778,6 @@ footer ul {
   }
 }
 
+.image-45 {
+    transform: rotate(45deg);
+}

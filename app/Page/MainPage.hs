@@ -21,16 +21,16 @@ page =
                         img_ [src_ "/static/chest.png"],
                         a_ [href_ "/"] [text "Get Tickets"]]
                     , li_ [class_ "hero-link"] [
-                        img_ [src_ "/static/sponsor.png"],
+                        img_ [class_ "image-45", src_ "/static/rocket.png"],
                         a_ [href_ "/"] [text "Become a Sponsor"]]
                     ]
             ]
         , section_
             [id_ "venue-images"]
             [ ul_ [id_ "venue-images-list"]
-                [ li_ [id_ "venue-image-1"] [img_ [src_ "https://placehold.co/600x400"]]
-                , li_ [id_ "venue-image-2"] [img_ [src_ "https://placehold.co/600x400"]]
-                , li_ [id_ "venue-image-3"] [img_ [src_ "https://placehold.co/600x400"]]
+                [ li_ [id_ "venue-image-1"] [img_ [src_ "/static/venue/venue1.png"]]
+                , li_ [id_ "venue-image-2"] [img_ [src_ "/static/venue/venue2.jpg"]]
+                , li_ [id_ "venue-image-3"] [img_ [src_ "/static/venue/venue3.png"]]
                 ]
             ]
         , section_
