@@ -221,6 +221,11 @@ h2 {
   text-transform: uppercase;
 }
 
+.highlight-text {
+  color: #065D9E;
+  font-size: 1.2em;
+}
+
 #about {
   @media (width < 56rem) {
     display: flex;
@@ -280,7 +285,10 @@ h2 {
     background: #38667fFF;
     color: #fff;
     position: relative;
-    padding: 10rem 2rem;
+    padding: 6rem 2rem;
+    box-shadow: 
+        inset 10px 0 0 0 black,
+        inset -10px 0 0 0 black;
 }
 
 #overview:before {
@@ -288,11 +296,27 @@ h2 {
     position: absolute;
     top: 0;
     left: 0;
-    height: 100%;
+    right: 0;
     width: 100%;
+    height: 20px;
+    transform: translateY(-100%);
     display: block;
-    background: url('/static/box_teal.png') no-repeat top center;
-    background-size: fill;
+    background: url('/static/inshort_box_top.png') no-repeat bottom center;
+    background-size: 100% 100%;
+}
+
+#overview:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 20px;
+    transform: translateY(100%);
+    display: block;
+    background: url('/static/inshort_box_bottom.png') no-repeat bottom center;
+    background-size: 100% 100%;
 }
 
 #overview li {

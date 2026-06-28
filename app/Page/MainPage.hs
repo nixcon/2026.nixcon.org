@@ -37,7 +37,7 @@ page =
             [id_ "about"]
                 [ div_
                     []
-                    [ p_ [] ["What to expect at this year's NixCon:"]
+                    [ p_ [class_ "highlight-text"] ["What to expect at this year's NixCon:"]
                     , p_
                         []
                         [ "Developers, operators, researchers, and enthusiasts come together to share ideas, present new work, and explore the future of reproducible systems."
