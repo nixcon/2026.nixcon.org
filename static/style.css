@@ -745,3 +745,49 @@ footer ul {
 .image-45 {
     transform: rotate(45deg);
 }
+
+
+.btn-red {
+    background-color: #e70000;
+    color: #fff;
+    padding: 0.7em 1em 0.3em 1em;
+    border: none;
+    position: relative;
+    border-bottom: 0.25em solid #ABB2B4;
+    box-shadow:
+        inset 0.25em 0 0 0 black,
+        inset -0.25em 0 0 0 black,
+        inset 0 0.25em 0 0 #f70000;
+}
+
+.btn-red:before {
+    position: absolute;
+    top: -0.25em;
+    left: 0.25em;
+    right: 0.25em;
+    height: 0.25em;
+    content: "";
+    display: block;
+    background-color: black;
+}
+
+.btn-red:after {
+    position: absolute;
+    bottom: calc(1px - 0.5em);
+    left: 0.25em;
+    right: 0.25em;
+    height: 0.25em;
+    content: "";
+    display: block;
+    background-color: black;
+    border-bottom: 0.25em solid #ABB2B4;
+}
+
+.btn-red:hover {
+    background-color: #a70000;
+    color: #eee;
+    box-shadow:
+        inset 0.25em 0 0 0 black,
+        inset -0.25em 0 0 0 black,
+        inset 0 0.25em 0 0 #c70000;
+}
