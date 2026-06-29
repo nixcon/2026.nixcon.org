@@ -96,11 +96,11 @@ view Model{..} =
                 []
                 [ ul_
                     []
-                    [ li_ [] [a_ [href_ "/#tickets"] [text "Tickets"]]
-                    , li_ [] [a_ [href_ "/#cfp"] [text "CfP"]]
+                    [ li_ [] [a_ [href_ "/#cfp"] [text "CfP"]]
                     , li_ [] [a_ [href_ "/#organisers"] [text "Organisers"]]
                     , li_ [] [a_ [href_ "/#ctf"] [text "CTF"]]
                     , li_ [] [a_ [href_ "/#sponsors"] [text "Sponsors"]]
+                    , li_ [] [a_ [href_ "https://tickets.nixcon.org/nixcon-2026/", class_ "btn-red"] [text "Get Tickets"]]
                     ]
                 ]
             ]
