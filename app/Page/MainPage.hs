@@ -270,6 +270,18 @@ page =
             , sponsors
                 [class_ "sponsor-rows"]
                 [ Sponsor
+                    { tier = Diamond
+                    , name = "Sponsor"
+                    , image = "/static/sponsor-logos/clan.svg"
+                    , website = "https://clan.lol/"
+                    }
+                , Sponsor
+                    { tier = Diamond
+                    , name = "Sponsor"
+                    , image = "/static/sponsor-logos/cyberus.svg"
+                    , website = "https://cyberus-technology.de/en"
+                    }
+                , Sponsor
                     { tier = Gold
                     , name = "Sponsor"
                     , image = "/static/sponsor-logos/pdt-partners.svg"
