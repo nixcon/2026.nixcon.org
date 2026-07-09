@@ -39,6 +39,7 @@
 html, body {
   width: 100vw;
   max-width: 100vw;
+  overflow-x: hidden;
 }
 
 body {
@@ -125,11 +126,78 @@ main > section {
 
 #hero {
   align-items: center;
+  gap: 1.5em;
+  padding-top: 5em;
+  padding-bottom: 1em;
+  position: relative;
+}
+
+#hero:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  height: 14rem;
+  width: 100%;
+  background: url('/static/cloud.png') no-repeat top center;
+  background-size: contain;
+  z-index: -1;
+}
+
+#hero:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: -50%;
+  height: 14rem;
+  overflow: hidden;
+  width: 100%;
+  background: url('/static/cloud.png') no-repeat bottom center;
+  background-size: contain;
+  opacity: 0.5;
+  z-index: -1;
 }
 
 #hero .logo {
-  height: 15em;
+  height: 7em;
   margin: 3em 0 1em 0;
+}
+
+#hero #nixcon-date-location {
+  color: #5e6cc7;
+  font-size: 1.4em;
+  text-transform: uppercase;
+}
+
+#hero #nixcon-description {
+  font-size: 1.4em;
+  line-height: 2;
+  max-width: 30em;
+}
+
+#hero #nixcon-hero-links {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 3em;
+}
+
+@media (width < 56rem) {
+  #hero #nixcon-hero-links {
+    gap: 2em;
+    justify-content: center;
+  }
+}
+
+#hero .hero-link {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5em;
+  align-items: center;
+}
+
+#hero .hero-link img {
+  height: 2.5em;
 }
 
 @keyframes blink {
@@ -140,6 +208,8 @@ main > section {
 
 #nixcon-title {
   animation: blink 1s step-start 0s infinite;
+  font-size: 3em;
+  margin-bottom: 0;
 }
 
 h1 {
@@ -158,6 +228,11 @@ h2 {
   text-transform: uppercase;
 }
 
+.highlight-text {
+  color: #065D9E;
+  font-size: 1.2em;
+}
+
 #about {
   @media (width < 56rem) {
     display: flex;
@@ -169,6 +244,39 @@ h2 {
     grid-template-columns: 5fr 4fr;
     gap: 3em;
   }
+  position: relative;
+}
+
+#about:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -57%;
+  height: 14rem;
+  width: 100%;
+  background: url('/static/bird.png') no-repeat top center;
+  background-size: contain;
+  z-index: -1;
+}
+
+#about:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -57%;
+  height: 14rem;
+  overflow: hidden;
+  width: 100%;
+  background: url('/static/bird.png') no-repeat bottom center;
+  transform: scaleX(-100%);
+  background-size: contain;
+  z-index: -1;
+}
+
+@media (width < 56rem) {
+    #about:after {
+      top: 50%;
+    }
 }
 
 #about > * {
@@ -188,6 +296,38 @@ h2 {
 }
 
 #overview {
+    background: #38667fFF;
+    color: #fff;
+    position: relative;
+    padding: 4rem 2rem;
+    border-bottom: 10px solid #ABB2B4;
+    box-shadow:
+        inset 10px 0 0 0 black,
+        inset -10px 0 0 0 black,
+        inset 0 10px 0 0 #64879B;
+}
+
+#overview:before {
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    right: 10px;
+    height: 10px;
+    content: "";
+    display: block;
+    background-color: black;
+}
+
+#overview:after {
+    position: absolute;
+    bottom: -20px;
+    left: 10px;
+    right: 10px;
+    height: 10px;
+    content: "";
+    display: block;
+    background-color: black;
+    border-bottom: 10px solid #ABB2B4;
 }
 
 #overview li {
@@ -207,25 +347,31 @@ h2 {
   top: 0;
 }
 
-#overview li:nth-of-type(1):before {
-  content: "📅";
+#overview li:nth-of-type(1) {
+    font-size: 1.2em;
+    padding-bottom: 2rem;
+    margin-left: -1rem;
 }
 
 #overview li:nth-of-type(2):before {
-  content: "📍";
+  content: "📅";
 }
 
 #overview li:nth-of-type(3):before {
+  content: "📍";
+}
+
+#overview li:nth-of-type(4):before {
   content: "🧑‍💻";
   top: -0.5em;
 }
 
-#overview li:nth-of-type(4) {
+#overview li:nth-of-type(5) {
   font-size: 80%;
   margin-top: -2em;
 }
 
-#overview li:nth-of-type(5):before {
+#overview li:nth-of-type(6):before {
   content: "🚩";
   top: -0.5em;
 }
@@ -430,6 +576,20 @@ h2 {
     max-width: 80vw;
 }
 
+#venue-images-list {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#venue-images-list li img {
+  max-width: 20em;
+  height: 100%;
+  object-fit: cover;
+}
+
 #volunteers {
   display: flex;
   flex-direction: column;
@@ -582,3 +742,52 @@ footer ul {
   border: none;
 }
 
+.image-45 {
+    transform: rotate(45deg);
+}
+
+
+.btn-red {
+    background-color: #e70000;
+    color: #fff;
+    padding: 0.7em 1em 0.3em 1em;
+    border: none;
+    position: relative;
+    border-bottom: 0.25em solid #ABB2B4;
+    box-shadow:
+        inset 0.25em 0 0 0 black,
+        inset -0.25em 0 0 0 black,
+        inset 0 0.25em 0 0 #f70000;
+}
+
+.btn-red:before {
+    position: absolute;
+    top: -0.25em;
+    left: 0.25em;
+    right: 0.25em;
+    height: 0.25em;
+    content: "";
+    display: block;
+    background-color: black;
+}
+
+.btn-red:after {
+    position: absolute;
+    bottom: calc(1px - 0.5em);
+    left: 0.25em;
+    right: 0.25em;
+    height: 0.25em;
+    content: "";
+    display: block;
+    background-color: black;
+    border-bottom: 0.25em solid #ABB2B4;
+}
+
+.btn-red:hover {
+    background-color: #a70000;
+    color: #eee;
+    box-shadow:
+        inset 0.25em 0 0 0 black,
+        inset -0.25em 0 0 0 black,
+        inset 0 0.25em 0 0 #c70000;
+}
