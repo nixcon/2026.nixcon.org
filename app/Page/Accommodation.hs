@@ -7,7 +7,7 @@ import Miso.Prelude
 page :: View model action
 page =
     main_
-        []
+        [id_ "hotels"]
         [ h1_ [] ["Hotels"]
         , p_
             []
@@ -15,9 +15,9 @@ page =
                 "We're talking to local hotels in Kraków to inform them about NixCon 2026 and to ask if they can offer discounts or other benefits to our attendees."
             ]
         , p_ [] [text "Check back frequently!"]
-        , p_
-            [class_ "hotel"]
-            [ p_
+        , article_
+            []
+            [ div_
                 []
                 [ h2_ [] [text "B&B Hotel Kraków Centrum"]
                 , p_
@@ -31,9 +31,9 @@ page =
                 ]
             , img_ [src_ "/static/accommodation/hotel-bb.jpg"]
             ]
-        , p_
-            [class_ "hotel"]
-            [ p_
+        , article_
+            []
+            [ div_
                 []
                 [ h2_ [] [text "Hotel Wyspiański"]
                 , p_

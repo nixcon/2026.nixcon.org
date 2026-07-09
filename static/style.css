@@ -582,7 +582,7 @@ footer ul {
   border: none;
 }
 
-.hotel {
+#hotels article {
   background-image: url("accommodation/hotel-box.png");
   background-repeat: no-repeat;
   background-size: contain;
@@ -649,7 +649,7 @@ footer ul {
     }
   }
 
-  p {
+  div {
     color: white;
     white-space: pre-line;
     text-align: left;
