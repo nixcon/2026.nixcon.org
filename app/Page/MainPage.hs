@@ -293,6 +293,12 @@ page =
                     , image = "/static/sponsor-logos/flox.svg"
                     , website = "https://flox.dev/"
                     }
+                , Sponsor
+                    { tier = Silver
+                    , name = "Sponsor"
+                    , image = "/static/sponsor-logos/nixbuild.svg"
+                    , website = "https://nixbuild.net/"
+                    }
                 ]
             ]
         ]
