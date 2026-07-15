@@ -271,31 +271,31 @@ page =
                 [class_ "sponsor-rows"]
                 [ Sponsor
                     { tier = Diamond
-                    , name = "Sponsor"
+                    , name = "clan"
                     , image = "/static/sponsor-logos/clan.svg"
                     , website = "https://clan.lol/"
                     }
                 , Sponsor
                     { tier = Diamond
-                    , name = "Sponsor"
+                    , name = "cyberus"
                     , image = "/static/sponsor-logos/cyberus.svg"
                     , website = "https://cyberus-technology.de/en"
                     }
                 , Sponsor
                     { tier = Gold
-                    , name = "Sponsor"
+                    , name = "pdt"
                     , image = "/static/sponsor-logos/pdt-partners.svg"
                     , website = "https://www.pdtpartners.com/"
                     }
                 , Sponsor
                     { tier = Gold
-                    , name = "Sponsor"
+                    , name = "flox"
                     , image = "/static/sponsor-logos/flox.svg"
                     , website = "https://flox.dev/"
                     }
                 , Sponsor
                     { tier = Silver
-                    , name = "Sponsor"
+                    , name = "nixbuild"
                     , image = "/static/sponsor-logos/nixbuild.svg"
                     , website = "https://nixbuild.net/"
                     }
