@@ -541,7 +541,7 @@ footer ul {
   display: flex;
   justify-content: center;
   gap: 6em;
-  max-width: 64em;
+  max-width: 48em;
   width: 100%;
   flex-wrap: wrap;
 }
