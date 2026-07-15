@@ -282,8 +282,14 @@ page =
                     , website = "https://cyberus-technology.de/en"
                     }
                 , Sponsor
+                    { tier = Diamond
+                    , name = "janestreet"
+                    , image = "/static/sponsor-logos/janestreet.svg"
+                    , website = "https://www.janestreet.com/"
+                    }
+                , Sponsor
                     { tier = Gold
-                    , name = "pdt"
+                    , name = "pdt-partners"
                     , image = "/static/sponsor-logos/pdt-partners.svg"
                     , website = "https://www.pdtpartners.com/"
                     }
@@ -292,6 +298,24 @@ page =
                     , name = "flox"
                     , image = "/static/sponsor-logos/flox.svg"
                     , website = "https://flox.dev/"
+                    }
+                , Sponsor
+                    { tier = Gold
+                    , name = "tangled"
+                    , image = "/static/sponsor-logos/tangled.svg"
+                    , website = "https://tangled.org/"
+                    }
+                , Sponsor
+                    { tier = Gold
+                    , name = "antithesis"
+                    , image = "/static/sponsor-logos/antithesis.svg"
+                    , website = "https://antithesis.com"
+                    }
+                , Sponsor
+                    { tier = Gold
+                    , name = "determinate-systems"
+                    , image = "/static/sponsor-logos/determinate-systems.svg"
+                    , website = "https://determinate.systems/"
                     }
                 , Sponsor
                     { tier = Silver
