@@ -28,9 +28,9 @@ page =
         , section_
             [id_ "venue-images"]
             [ ul_ [id_ "venue-images-list"]
-                [ li_ [id_ "venue-image-1"] [img_ [src_ "/static/venue/venue1.png", alt_ "Image of a large scale auditorium with two ranks of seats arranged in a half circle."]]
+                [ li_ [id_ "venue-image-1"] [img_ [src_ "/static/venue/venue1.jpg", alt_ "Image of a large scale auditorium with two ranks of seats arranged in a half circle."]]
                 , li_ [id_ "venue-image-2"] [img_ [src_ "/static/venue/venue2.jpg", alt_ "Image of the Krakow city skyline"]]
-                , li_ [id_ "venue-image-3"] [img_ [src_ "/static/venue/venue3.png", alt_ "Image the atrium of the venue, consisting of indoor balconys and stairs in a brutalist style"]]
+                , li_ [id_ "venue-image-3"] [img_ [src_ "/static/venue/venue3.jpg", alt_ "Image the atrium of the venue, consisting of indoor balconys and stairs in a brutalist style"]]
                 ]
             ]
         , section_

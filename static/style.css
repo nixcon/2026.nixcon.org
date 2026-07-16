@@ -137,7 +137,7 @@ main > section {
   position: absolute;
   top: 0;
   left: -50%;
-  height: 14rem;
+  height: 10rem;
   width: 100%;
   background: url('/static/cloud.png') no-repeat top center;
   background-size: contain;
@@ -149,7 +149,7 @@ main > section {
   position: absolute;
   bottom: 0;
   right: -50%;
-  height: 14rem;
+  height: 10rem;
   overflow: hidden;
   width: 100%;
   background: url('/static/cloud.png') no-repeat bottom center;
@@ -252,7 +252,7 @@ h2 {
   position: absolute;
   bottom: 0;
   left: -57%;
-  height: 14rem;
+  height: 10rem;
   width: 100%;
   background: url('/static/bird.png') no-repeat top center;
   background-size: contain;
@@ -264,7 +264,7 @@ h2 {
   position: absolute;
   top: 0;
   right: -57%;
-  height: 14rem;
+  height: 10rem;
   overflow: hidden;
   width: 100%;
   background: url('/static/bird.png') no-repeat bottom center;
@@ -574,6 +574,7 @@ h2 {
 
 #venue img {
     max-width: 80vw;
+    image-rendering: auto;
 }
 
 #venue-images-list {
