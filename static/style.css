@@ -154,7 +154,7 @@ main > section {
   width: 100%;
   background: url('/static/cloud.png') no-repeat bottom center;
   background-size: contain;
-  opacity: 0.5;
+  opacity: 0.2;
   z-index: -1;
 }
 
@@ -186,6 +186,25 @@ main > section {
   #hero #nixcon-hero-links {
     gap: 2em;
     justify-content: center;
+  }
+  #hero .logo {
+    height: auto;
+    max-width: 50vw;
+    margin: 0 0 1em 0;
+  }
+  #nixcon-date-location-divider {
+    display: none;
+  }
+  #nixcon-date {
+      display: block;
+      max-width: 80vw;
+      margin-bottom: 1rem;
+  }
+  #nixcon-location {
+      display: block;
+  }
+  .text-desktop-only {
+      display: none;
   }
 }
 
@@ -374,6 +393,28 @@ h2 {
 #overview li:nth-of-type(6):before {
   content: "🚩";
   top: -0.5em;
+}
+
+@media (width < 56rem) {
+    #overview {
+        padding: 1rem 2rem 3rem 2rem;
+    }
+    #overview li {
+      padding-left: 0;
+      font-size: 0.9em;
+    }
+    #overview li:before {
+        display: block;
+        position: relative;
+    }
+    #overview li:nth-of-type(1) {
+        margin-left: 0;
+        padding-bottom: 1rem;
+    }
+    #overview li:nth-of-type(5) {
+      font-size: 80%;
+      margin-top: -4em;
+    }
 }
 
 #social {
@@ -686,7 +727,7 @@ footer ul {
 }
 
 .sponsor:hover {
-  filter: brightness(1.25); 
+  filter: brightness(1.25);
 }
 
 .sponsor-frame {
