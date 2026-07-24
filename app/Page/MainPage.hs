@@ -13,7 +13,11 @@ page =
         [ section_
             [id_ "hero"]
             [ img_ [class_ "logo", src_ "/static/icon.svg"]
-                , span_ [id_ "nixcon-date-location"] [text "25-28 September | KRAKOW"]
+                , span_ [id_ "nixcon-date-location"] [
+                    span_ [id_ "nixcon-date"] [text "25-28 September"]
+                    , span_ [id_ "nixcon-date-location-divider"] [text " | "]
+                    , span_ [id_ "nixcon-location"] [text "KRAKOW"]
+                ]
                 , h1_ [id_ "nixcon-title"] [text "JOIN NIXCON 2026"]
                 , p_ [id_ "nixcon-description"] [text "NixCon is the annual gathering of the Nix community."]
                 , ul_ [id_ "nixcon-hero-links"]
@@ -37,7 +41,11 @@ page =
             [id_ "about"]
                 [ div_
                     []
-                    [ p_ [class_ "highlight-text"] ["What to expect at this year's NixCon:"]
+                    [ p_ [class_ "highlight-text"] [
+                        span_ [] [text "What to expect"]
+                        , span_ [class_ "text-desktop-only"] [text " at this year's NixCon"]
+                        , span_ [] [text ":"]
+                    ]
                     , p_
                         []
                         [ "Developers, operators, researchers, and enthusiasts come together to share ideas, present new work, and explore the future of reproducible systems."
