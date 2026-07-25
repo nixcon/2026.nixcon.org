@@ -710,7 +710,7 @@ footer ul {
 }
 
 .sponsor:hover {
-  filter: brightness(1.25);
+  opacity: 0.8;
 }
 
 .sponsor-frame {
