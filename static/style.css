@@ -611,7 +611,7 @@ h2 {
 
 #venue-images-list li img {
   max-width: 20em;
-  height: 100%;
+  height: stretch;
   object-fit: cover;
 }
 
