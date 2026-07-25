@@ -203,9 +203,6 @@ main > section {
   #nixcon-location {
       display: block;
   }
-  .text-desktop-only {
-      display: none;
-  }
 }
 
 #hero .hero-link {

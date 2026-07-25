@@ -69,9 +69,7 @@ page =
                 []
                 [ p_
                     [class_ "highlight-text"]
-                    [ span_ [] [text "What to expect"]
-                    , span_ [class_ "text-desktop-only"] [text " at this year's NixCon"]
-                    , span_ [] [text ":"]
+                    [ span_ [] [text "What to expect:"]
                     ]
                 , p_
                     []
