@@ -94,8 +94,7 @@ page =
                     []
                     [ text "Auditorium Maximum\nul. Krupnicza 33\n31-123 Kraków\nPolska"
                     ]
-                , li_ [] [text "600-700 attendees"]
-                , li_ [] [text "... and their spouses🥰"]
+                , li_ [] [text "600-700 attendees\n... and their spouses🥰"]
                 , li_ [] [text "First NixCon CTF ever!"]
                 ]
             ]
