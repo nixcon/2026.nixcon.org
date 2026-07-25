@@ -100,7 +100,12 @@ view Model{..} =
                     , li_ [] [a_ [href_ "/#organisers"] [text "Organisers"]]
                     , li_ [] [a_ [href_ "/#ctf"] [text "CTF"]]
                     , li_ [] [a_ [href_ "/#sponsors"] [text "Sponsors"]]
-                    , li_ [] [a_ [href_ "https://tickets.nixcon.org/nixcon-2026/", class_ "btn-red"] [text "Get Tickets"]]
+                    , li_
+                        []
+                        [ a_
+                            [href_ "https://tickets.nixcon.org/nixcon-2026/", class_ "btn-red"]
+                            [text "Get Tickets"]
+                        ]
                     ]
                 ]
             ]

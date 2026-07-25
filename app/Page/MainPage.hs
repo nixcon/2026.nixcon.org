@@ -13,65 +13,92 @@ page =
         [ section_
             [id_ "hero"]
             [ img_ [class_ "logo", src_ "/static/icon.svg"]
-                , span_ [id_ "nixcon-date-location"] [
-                    span_ [id_ "nixcon-date"] [text "25-28 September"]
-                    , span_ [id_ "nixcon-date-location-divider"] [text " | "]
-                    , span_ [id_ "nixcon-location"] [text "KRAKOW"]
+            , span_
+                [id_ "nixcon-date-location"]
+                [ span_ [id_ "nixcon-date"] [text "25-28 September"]
+                , span_ [id_ "nixcon-date-location-divider"] [text " | "]
+                , span_ [id_ "nixcon-location"] [text "KRAKOW"]
                 ]
-                , h1_ [id_ "nixcon-title"] [text "JOIN NIXCON 2026"]
-                , p_ [id_ "nixcon-description"] [text "NixCon is the annual gathering of the Nix community."]
-                , ul_ [id_ "nixcon-hero-links"]
-                    [ li_ [class_ "hero-link"] [
-                        img_ [src_ "/static/chest.png"],
-                        a_ [href_ "/"] [text "Get Tickets"]]
-                    , li_ [class_ "hero-link"] [
-                        img_ [class_ "image-45", src_ "/static/rocket.png"],
-                        a_ [href_ "/"] [text "Become a Sponsor"]]
+            , h1_ [id_ "nixcon-title"] [text "JOIN NIXCON 2026"]
+            , p_
+                [id_ "nixcon-description"]
+                [text "NixCon is the annual gathering of the Nix community."]
+            , ul_
+                [id_ "nixcon-hero-links"]
+                [ li_
+                    [class_ "hero-link"]
+                    [ img_ [src_ "/static/chest.png"]
+                    , a_ [href_ "/"] [text "Get Tickets"]
                     ]
+                , li_
+                    [class_ "hero-link"]
+                    [ img_ [class_ "image-45", src_ "/static/rocket.png"]
+                    , a_ [href_ "/"] [text "Become a Sponsor"]
+                    ]
+                ]
             ]
         , section_
             [id_ "venue-images"]
-            [ ul_ [id_ "venue-images-list"]
-                [ li_ [id_ "venue-image-1"] [img_ [src_ "/static/venue/venue1.jpg", alt_ "Image of a large scale auditorium with two ranks of seats arranged in a half circle."]]
-                , li_ [id_ "venue-image-2"] [img_ [src_ "/static/venue/venue2.jpg", alt_ "Image of the Krakow city skyline"]]
-                , li_ [id_ "venue-image-3"] [img_ [src_ "/static/venue/venue3.jpg", alt_ "Image the atrium of the venue, consisting of indoor balconys and stairs in a brutalist style"]]
+            [ ul_
+                [id_ "venue-images-list"]
+                [ li_
+                    [id_ "venue-image-1"]
+                    [ img_
+                        [ src_ "/static/venue/venue1.jpg"
+                        , alt_
+                            "Image of a large scale auditorium with two ranks of seats arranged in a half circle."
+                        ]
+                    ]
+                , li_
+                    [id_ "venue-image-2"]
+                    [ img_ [src_ "/static/venue/venue2.jpg", alt_ "Image of the Krakow city skyline"]
+                    ]
+                , li_
+                    [id_ "venue-image-3"]
+                    [ img_
+                        [ src_ "/static/venue/venue3.jpg"
+                        , alt_
+                            "Image the atrium of the venue, consisting of indoor balconys and stairs in a brutalist style"
+                        ]
+                    ]
                 ]
             ]
         , section_
             [id_ "about"]
-                [ div_
+            [ div_
+                []
+                [ p_
+                    [class_ "highlight-text"]
+                    [ span_ [] [text "What to expect"]
+                    , span_ [class_ "text-desktop-only"] [text " at this year's NixCon"]
+                    , span_ [] [text ":"]
+                    ]
+                , p_
                     []
-                    [ p_ [class_ "highlight-text"] [
-                        span_ [] [text "What to expect"]
-                        , span_ [class_ "text-desktop-only"] [text " at this year's NixCon"]
-                        , span_ [] [text ":"]
+                    [ "Developers, operators, researchers, and enthusiasts come together to share ideas, present new work, and explore the future of reproducible systems."
                     ]
-                    , p_
-                        []
-                        [ "Developers, operators, researchers, and enthusiasts come together to share ideas, present new work, and explore the future of reproducible systems."
-                        ]
-                    , p_
-                        []
-                        [ "Join us for talks, workshops, and discussions about everything from Nix fundamentals to large-scale production deployments."
-                        ]
-                    , p_
-                        []
-                        [ "We'll organise city activities so that you can bring along your partner or a friend that wants to experience Kraków with you."
-                        ]
+                , p_
+                    []
+                    [ "Join us for talks, workshops, and discussions about everything from Nix fundamentals to large-scale production deployments."
                     ]
-                , ul_
-                    [id_ "overview"]
-                    [ li_ [] [text "In short"]
-                    , li_ [] [text "25-28 September 2026\nFriday to Monday"]
-                    , li_
-                        []
-                        [ text "Auditorium Maximum\nul. Krupnicza 33\n31-123 Kraków\nPolska"
-                        ]
-                    , li_ [] [text "600-700 attendees"]
-                    , li_ [] [text "... and their spouses🥰"]
-                    , li_ [] [text "First NixCon CTF ever!"]
+                , p_
+                    []
+                    [ "We'll organise city activities so that you can bring along your partner or a friend that wants to experience Kraków with you."
                     ]
                 ]
+            , ul_
+                [id_ "overview"]
+                [ li_ [] [text "In short"]
+                , li_ [] [text "25-28 September 2026\nFriday to Monday"]
+                , li_
+                    []
+                    [ text "Auditorium Maximum\nul. Krupnicza 33\n31-123 Kraków\nPolska"
+                    ]
+                , li_ [] [text "600-700 attendees"]
+                , li_ [] [text "... and their spouses🥰"]
+                , li_ [] [text "First NixCon CTF ever!"]
+                ]
+            ]
         , section_
             [id_ "tickets"]
             [ h2_ [] [text "Tickets"]
