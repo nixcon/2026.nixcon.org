@@ -151,7 +151,6 @@ page =
                 [class_ "note"]
                 [ img_ [src_ "/static/document.png"]
                 , h4_ [] ["The CfP for NixCon 2026 is closed. Thanks to all submitters!"]
-                , a_ [href_ "https://talks.nixcon.org/nixcon-2026/"] ["To the CfP"]
                 ]
             ]
         , section_
