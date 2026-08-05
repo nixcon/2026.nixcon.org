@@ -376,9 +376,9 @@ page =
                     }
                 , Sponsor
                     { tier = Silver
-                    , name = "modus-create"
-                    , image = "/static/sponsor-logos/modus-create.svg"
-                    , website = "https://www.moduscreate.com/"
+                    , name = "tweag"
+                    , image = "/static/sponsor-logos/tweag.svg"
+                    , website = "https://www.tweag.io/"
                     }
                 ]
             ]
