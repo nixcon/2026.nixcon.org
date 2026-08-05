@@ -374,6 +374,12 @@ page =
                     , image = "/static/sponsor-logos/nixbuild.svg"
                     , website = "https://nixbuild.net/"
                     }
+                , Sponsor
+                    { tier = Silver
+                    , name = "modus-create"
+                    , image = "/static/sponsor-logos/modus-create.svg"
+                    , website = "https://www.moduscreate.com/"
+                    }
                 ]
             ]
         ]
