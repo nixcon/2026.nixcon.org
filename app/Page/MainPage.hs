@@ -380,6 +380,12 @@ page =
                     , image = "/static/sponsor-logos/tweag.svg"
                     , website = "https://www.tweag.io/"
                     }
+                , Sponsor
+                    { tier = Bronze
+                    , name = "numtide"
+                    , image = "/static/sponsor-logos/numtide.svg"
+                    , website = "https://numtide.com/"
+                    }
                 ]
             ]
         ]
