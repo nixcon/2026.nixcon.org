@@ -462,15 +462,26 @@ h2 {
 
 .scroll {
   text-align: left;
-  width: 20em;
   margin: 1em;
-  aspect-ratio: 29 / 37;
-  background-image: url("scroll.png");
-  background-size: cover;
   display: inline-flex;
   flex-direction: column;
   gap: 1em;
   padding: 3em 3em 4em 3.5em;
+}
+
+.ticket-scroll {
+  width: 20em;
+  aspect-ratio: 29 / 37;
+  background-image: url("ticket-scroll.png");
+  background-size: cover;
+}
+
+
+.sponsor-scroll {
+  width: 21em;
+  aspect-ratio: 29 / 45;
+  background-image: url("sponsor-scroll.png");
+  background-size: cover;
 }
 
 .scroll .details {
