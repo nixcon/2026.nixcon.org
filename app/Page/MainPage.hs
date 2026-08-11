@@ -278,6 +278,8 @@ page =
                     , details =
                         [ "Logo on website"
                         , "1 Professional ticket"
+                        , "Social media boost"
+                        , "Distribute merch"
                         ]
                     , price = "1024 €"
                     }
@@ -286,8 +288,10 @@ page =
                     , title = "Silver"
                     , details =
                         [ "Everything in Bronze"
-                        , "Shout-out in the opening"
                         , "2 Professional tickets"
+                        , "Shout-out in the opening"
+                        , "Slide on break slideshow"
+                        , "Add flyer to tote bags"
                         ]
                     , price = "4096 €"
                     }
@@ -296,9 +300,9 @@ page =
                     , title = "Gold"
                     , details =
                         [ "Everything in Silver"
+                        , "4 Professional tickets"
                         , "5 minute lightning talk slot"
                         , "Dedicated booth space"
-                        , "4 Professional tickets"
                         ]
                     , price = "8192 €"
                     }
@@ -307,9 +311,11 @@ page =
                     , title = "Diamond"
                     , details =
                         [ "Everything in Gold"
+                        , "8 Professional tickets"
                         , "Logo in promo materials"
                         , "Add item to tote bags"
-                        , "8 Professional tickets"
+                        , "Intro in recordings"
+                        , "Opening presentation"
                         ]
                     , price = "16384 €"
                     }
