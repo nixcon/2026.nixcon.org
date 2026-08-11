@@ -405,7 +405,7 @@ data TicketScroll = TicketScroll
 ticketScroll :: TicketScroll -> View model action
 ticketScroll TicketScroll{..} =
     li_
-        [class_ "scroll"]
+        [class_ "scroll ticket-scroll"]
         [ div_ [class_ "title"] [text title]
         , div_ [class_ "price"] [text price]
         , ul_ [class_ "details"] [li_ [] [text t] | t <- details]
@@ -443,7 +443,7 @@ mkSponsorshipTierLink tier =
 sponsorScroll :: SponsorScroll -> View model action
 sponsorScroll SponsorScroll{..} =
     li_
-        [class_ "scroll"]
+        [class_ "scroll sponsor-scroll"]
         [ div_ [class_ "title"] [text title]
         , div_ [class_ "price"] [text price]
         , ul_ [class_ "details"] [li_ [] [text t] | t <- details]
