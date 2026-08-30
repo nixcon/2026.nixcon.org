@@ -386,6 +386,12 @@ page =
                     , image = "/static/sponsor-logos/numtide.svg"
                     , website = "https://numtide.com/"
                     }
+                , Sponsor
+                    { tier = Bronze
+                    , name = "socal"
+                    , image = "/static/sponsor-logos/socal.svg"
+                    , website = "https://socal-nug.com/"
+                    }
                 ]
             ]
         ]
