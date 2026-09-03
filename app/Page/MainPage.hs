@@ -392,6 +392,12 @@ page =
                     , image = "/static/sponsor-logos/socal.svg"
                     , website = "https://socal-nug.com/"
                     }
+                , Sponsor
+                    { tier = Bronze
+                    , name = "nixcademy"
+                    , image = "/static/sponsor-logos/nixcademy.svg"
+                    , website = "https://nixcademy.com/"
+                    }
                 ]
             ]
         ]
