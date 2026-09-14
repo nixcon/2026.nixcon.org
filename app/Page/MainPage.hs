@@ -398,6 +398,12 @@ page =
                     , image = "/static/sponsor-logos/nixcademy.svg"
                     , website = "https://nixcademy.com/"
                     }
+                , Sponsor
+                    { tier = Bronze
+                    , name = "profound"
+                    , image = "/static/sponsor-logos/profound.svg"
+                    , website = "https://www.tryprofound.com/"
+                    }
                 ]
             ]
         ]
