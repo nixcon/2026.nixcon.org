@@ -146,12 +146,12 @@ page =
             ]
         , section_
             [id_ "cfp"]
-            [ h2_ [] [text "CfP"]
+            [ h2_ [] [text "Schedule and CfP"]
             , section_
                 [class_ "note"]
                 [ img_ [src_ "/static/document.png"]
                 , h4_ [] ["The CfP for NixCon 2026 is closed. Thanks to all submitters!"]
-                , a_ [href_ "https://talks.nixcon.org/nixcon-2026/"] ["To the CfP"]
+                , a_ [href_ "https://talks.nixcon.org/nixcon-2026/schedule"] ["To the schedule"]
                 ]
             ]
         , section_
