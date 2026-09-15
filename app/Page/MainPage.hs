@@ -404,6 +404,12 @@ page =
                     , image = "/static/sponsor-logos/profound.svg"
                     , website = "https://www.tryprofound.com/"
                     }
+                , Sponsor
+                    { tier = Bronze
+                    , name = "atvari"
+                    , image = "/static/sponsor-logos/atvari.svg"
+                    , website = "https://atvari.eu/"
+                    }
                 ]
             ]
         ]
