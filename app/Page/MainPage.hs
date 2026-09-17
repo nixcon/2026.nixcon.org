@@ -28,12 +28,12 @@ page =
                 [ li_
                     [class_ "hero-link"]
                     [ img_ [src_ "/static/chest.png"]
-                    , a_ [href_ "/"] [text "Get Tickets"]
+                    , a_ [href_ "https://tickets.nixcon.org/nixcon-2026/"] [text "Get Tickets"]
                     ]
                 , li_
                     [class_ "hero-link"]
                     [ img_ [class_ "image-45", src_ "/static/rocket.png"]
-                    , a_ [href_ "/"] [text "Become a Sponsor"]
+                    , a_ [href_ "/#sponsorship"] [text "Become a Sponsor"]
                     ]
                 ]
             ]
