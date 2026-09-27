@@ -109,6 +109,13 @@ view Model{..} =
                     ]
                 ]
             ]
+        , a_
+            [ id_ "livestream-banner"
+            , href_ "https://www.youtube.com/nixcon"
+            , target_ "_blank"
+            , rel_ "noopener noreferrer"
+            ]
+            [text "\128250 NixCon 2026 livestreams are up! Watch now \8594"]
         , case currentPage of
             MainPage -> Page.MainPage.page
             LegalDisclosure -> Page.LegalDisclosure.page

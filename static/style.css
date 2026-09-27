@@ -63,6 +63,27 @@ body {
   line-height: 1.4;
 }
 
+#livestream-banner {
+  display: block;
+  position: sticky;
+  top: 0;
+  z-index: 11;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #606fce;
+  color: #FFF;
+  text-align: center;
+  padding: 0.75em 1em;
+  font-size: 1em;
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+#livestream-banner:hover {
+  color: #FFF;
+  background-color: #F00;
+}
+
 header {
   background-color: #2F2F2F;
   color: #FFF;
